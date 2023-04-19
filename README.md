@@ -5,7 +5,9 @@
 ## Integrantes del equipo
 
 [Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
-
+Pilar Fernández Torrejón
+Cristina Buisac Liarte
+Laura Antona Díaz
 ## Objetivos del trabajo
 
 [Lista de los objetivos que se persiguen con el trabajo propuesto.]
