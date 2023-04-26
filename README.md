@@ -8,6 +8,7 @@
 Pilar Fernández Torrejón
 Cristina Buisac Liarte
 Laura Antona Díaz
+Solomiya Havryshko
 ## Objetivos del trabajo
 
 [Lista de los objetivos que se persiguen con el trabajo propuesto.]
