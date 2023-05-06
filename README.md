@@ -7,7 +7,7 @@
 [Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
 Pilar Fernández Torrejón
 Cristina Buisac Liarte
-Laura Antona Díaz
+Laura Antona Díaz ( Lauraantonadiaz)
 Solomiya Havryshko
 ## Objetivos del trabajo
 
