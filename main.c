@@ -1,12 +1,24 @@
 #include <stdio.h>
-#include <string.h>
-int main(){
-	FILE *pf;
-	FILE *archivo_menu;
-	int numero=0;
-
-	printf("Introduzca el numero de la operación que desea realizar\n");
-	printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n");
+#include "funciones.h"
+#include "string.h"
+#include <stdlib.h>
+#define N 23
+int main()
+{
+  tipos *energias;
+  fecha *fech;
+  char x;
+    int nLineas=0,pos;
+    int numero;
+energias = malloc(sizeof(tipos) * N);
+fech = malloc(sizeof(fecha) * 1);
+  // Defino un vector para cada variable a leer del fichero	
+  int i = 0;
+  guardar_datos_generacion_energias(energias);
+guardar_datos_generacion_fechas(fech);
+ //Mostramos resultados
+ printf("Introduzca el numero de la operaci?n que desea realizar\n");
+menu();
 	scanf("%d",&numero);
 	switch(numero){
 		case 1:
@@ -20,6 +32,8 @@ int main(){
 		break;
 		case 4:
 		printf("BUSQUEDAS\n");
+    printf("%s\n", energias[5].tipo_energia);
+    printf("%d/%d\n", fech[5].month,fech[5].year); 
 		break;
 		case 5:
 		printf("ORDENACION DE VALORES\n");
@@ -28,15 +42,8 @@ int main(){
 			printf("Error\n");
 			break;
 	}
-	
-		pf=fopen("generacion_por_tecnologias_21_22.csv","r");
-		if(pf==NULL){
-			printf("No se ha podido abrir el archivo\n");
-			return -1;
-		}
-		else{ 
-		printf("Se ha abierto correctamente\n");
-	}
-	fclose(pf);
-	return 0;
+        free(energias);
+   free(fech);
+  return 0;	
 }
+
