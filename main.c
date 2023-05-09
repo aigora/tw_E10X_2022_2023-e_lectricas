@@ -78,8 +78,7 @@ menu();
 		
 		
 		
-	}
-		
+			
 		break;
 		case 2:
 		printf("CARGA DE NUEVOS DATOS\n");
@@ -89,8 +88,37 @@ menu();
 		break;
 		case 4:
 		printf("BUSQUEDAS\n");
-    printf("%s\n", energias[5].tipo_energia);
-    printf("%d/%d\n", fech[5].month,fech[5].year); 
+        printf("%s\n", energias[5].tipo_energia);
+        printf("%d/%d\n", fech[5].month,fech[5].year); 
+        // Inicialización de la variable 'maximo' con el primer valor de 'cant_generada'
+        int maximo = energias[1].cant_generada[0];
+        int i;
+        for (int i = 2; i < N; i++) 
+		{
+			for (int j = 0; j < 12; j++) {
+            if (energias[i].cant_generada[j] > maximo) 
+            {
+            	//Actualización del valor 'maximo'
+            	maximo = energias[i].cant_generada[j];
+			}
+        }
+    printf("El valor maximo de la cantidad generada de energia es: %d\n", maximo);
+    // Inicialización de la variable 'minimo' con el primer valor de 'cant_generada'
+    int minimo = energias[1].cant_generada[0];
+    for (int i = 2; i < N; i++) 
+	{
+        for (int j = 0; j < 12; j++) 
+		{
+            if (energias[i].cant_generada[j] < minimo) 
+			{
+				//Actualización del valor 'minimo'
+                minimo = energias[i].cant_generada[j];
+            }
+        }
+    }
+    printf("El valor mínimo de la cantidad generada de energia es: %d\n", minimo);
+    break;
+
 		break;
 		case 5:
 		printf("ORDENACION DE VALORES\n");
