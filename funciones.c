@@ -78,3 +78,71 @@ int linea_actual = 0;
     // Se ha terminado de leer, luego se cierra el archivo
     fclose(pf);	
 }
+float mediana(tipos *datos){
+	 int n, i; //n es el numero de valores segun el año que elijamos 
+	   float mediana, mediana2;
+    float num, sum = 0, media;
+
+    for (i = 1; i <= n; ++i)
+	{
+        printf("Ingrese el valor %d: ", i);
+        scanf("%f", &num);
+        sum += num;
+    }
+
+  media = sum / n;
+    printf("La media es: %.2f", media);		
+    //para n numero de datos 
+
+    // Leer los datos y calcular la mediana
+    for (i = 0; i < n; i++) {
+        scanf("%f", &mediana2);
+        if (i == n / 2) {  // Si se ha leído la mitad de los datos, almacenar la mediana y salir del bucle
+            mediana = mediana2;
+            if (n % 2 == 0) {  // Si el número de elementos es par, leer un valor adicional y calcular la mediana como el promedio de los dos valores centrales
+                mediana= (mediana + mediana2) / 2;
+            }
+            break;
+        }
+    }
+
+    printf("La mediana es: %f", mediana);
+
+    return 0;
+}
+
+float valor_maximo(int filas,int columnas,tipos *energias){
+	 float maximo = energias[0].cant_generada[0];
+        int i;
+        int j;
+        for (i = 0; i < filas; i++) 
+		{
+			for (j = 0; j < columnas; j++) {
+            if (energias[i].cant_generada[j] >= maximo) 
+            {
+            	//Actualización del valor 'maximo'
+            	maximo = energias[i].cant_generada[j];
+            	printf("%f\n",maximo);
+			}
+        }
+    }
+      return maximo;
+    // Inicialización de la variable 'minimo' con el primer valor de 'cant_generada'
+}
+float valor_minimo(int filas,int columnas,tipos *energias){
+	int i;
+	int j;
+	float minimo = energias[0].cant_generada[0];
+    for (i = 0; i < filas; i++) 
+	{
+        for (j = 0; j < columnas; j++) 
+		{
+            if (energias[i].cant_generada[j] <= minimo) 
+			{
+				//Actualización del valor 'minimo'
+                minimo = energias[i].cant_generada[j];
+            }
+        }
+    }
+    return minimo;
+}
