@@ -93,9 +93,10 @@ menu();
         // Inicialización de la variable 'maximo' con el primer valor de 'cant_generada'
         int maximo = energias[1].cant_generada[0];
         int i;
-        for (int i = 2; i < N; i++) 
+        int j;
+        for (i = 2; i < N; i++) 
 		{
-			for (int j = 0; j < 12; j++) {
+			for (j = 0; j < 12; j++) {
             if (energias[i].cant_generada[j] > maximo) 
             {
             	//Actualización del valor 'maximo'
@@ -105,9 +106,9 @@ menu();
     printf("El valor maximo de la cantidad generada de energia es: %d\n", maximo);
     // Inicialización de la variable 'minimo' con el primer valor de 'cant_generada'
     int minimo = energias[1].cant_generada[0];
-    for (int i = 2; i < N; i++) 
+    for (i = 2; i < N; i++) 
 	{
-        for (int j = 0; j < 12; j++) 
+        for (j = 0; j < 12; j++) 
 		{
             if (energias[i].cant_generada[j] < minimo) 
 			{
