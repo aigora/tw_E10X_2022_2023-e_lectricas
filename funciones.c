@@ -1,4 +1,4 @@
-//implementaci贸n de las funciones
+//implementaci脙鲁n de las funciones
 #include<stdio.h>
 #include"funciones.h"
 #include "string.h"
@@ -22,7 +22,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 int linea_actual = 0;
     fseek(pf, 413, SEEK_SET);
  pos = ftell(pf);
-    printf("La posici贸n actual del puntero es %ld bytes.\n", pos);
+    printf("La posici脙鲁n actual del puntero es %ld bytes.\n", pos);
 while ( linea_actual <= 23) {
 	fscanf(pf,"%[^,],%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n",
         datos[linea_actual].tipo_energia, &datos[linea_actual].cant_generada[0],
@@ -38,7 +38,7 @@ while ( linea_actual <= 23) {
         &datos[linea_actual].cant_generada[19], &datos[linea_actual].cant_generada[20],
         &datos[linea_actual].cant_generada[21], &datos[linea_actual].cant_generada[22],
         &datos[linea_actual].cant_generada[23]);
-    // Leer los datos de la l铆nea actual
+    // Leer los datos de la l脙颅nea actual
     linea_actual++;
 }
 }
@@ -65,7 +65,7 @@ int linea_actual = 0;
  pos = ftell(pf);
     fseek(pf, 250, SEEK_SET);
  pos = ftell(pf);
-    printf("La posici贸n actual del puntero es %ld bytes.\n", pos);
+    printf("La posici脙鲁n actual del puntero es %ld bytes.\n", pos);
     while ( linea_actual ==5) {
 	fscanf(pf,"%s %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d",titulo,&f[0].month,&f[0].year,&f[1].month,&f[1].year,&f[2].month,&f[2].year,&f[3].month,&f[3].year,
 	&f[4].month,&f[4].year,&f[5].month,&f[5].year,&f[6].month,&f[6].year,&f[7].month,&f[7].year,&f[8].month,&f[8].year,
@@ -79,7 +79,7 @@ int linea_actual = 0;
     fclose(pf);	
 }
 float mediana(tipos *datos){
-	 int n, i; //n es el numero de valores segun el a駉 que elijamos 
+	 int n, i; //n es el numero de valores segun el a帽o que elijamos 
 	   float mediana, mediana2;
     float num, sum = 0, media;
 
@@ -97,9 +97,9 @@ float mediana(tipos *datos){
     // Leer los datos y calcular la mediana
     for (i = 0; i < n; i++) {
         scanf("%f", &mediana2);
-        if (i == n / 2) {  // Si se ha le韉o la mitad de los datos, almacenar la mediana y salir del bucle
+        if (i == n / 2) {  // Si se ha le铆do la mitad de los datos, almacenar la mediana y salir del bucle
             mediana = mediana2;
-            if (n % 2 == 0) {  // Si el n鷐ero de elementos es par, leer un valor adicional y calcular la mediana como el promedio de los dos valores centrales
+            if (n % 2 == 0) {  // Si el n煤mero de elementos es par, leer un valor adicional y calcular la mediana como el promedio de los dos valores centrales
                 mediana= (mediana + mediana2) / 2;
             }
             break;
@@ -111,38 +111,39 @@ float mediana(tipos *datos){
     return 0;
 }
 
-float valor_maximo(int filas,int columnas,tipos *energias){
+float valor_maximo(int filas,int columnas,int filas2,int columnas2,tipos *energias){
 	 float maximo = energias[0].cant_generada[0];
         int i;
         int j;
-        for (i = 0; i < filas; i++) 
+        for (i = filas; i < filas2; i++) 
 		{
-			for (j = 0; j < columnas; j++) {
+			for (j = columnas; j < columnas2; j++) {
             if (energias[i].cant_generada[j] >= maximo) 
             {
-            	//Actualizaci髇 del valor 'maximo'
+            	//Actualizaci贸n del valor 'maximo'
             	maximo = energias[i].cant_generada[j];
-            	printf("%f\n",maximo);
 			}
         }
     }
+      printf("El valor maximo de la cantidad generada de energia de todo el periodo analizado es: %f\n", maximo);
       return maximo;
-    // Inicializaci髇 de la variable 'minimo' con el primer valor de 'cant_generada'
+    // Inicializaci贸n de la variable 'minimo' con el primer valor de 'cant_generada'
 }
-float valor_minimo(int filas,int columnas,tipos *energias){
+float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energias){
 	int i;
 	int j;
 	float minimo = energias[0].cant_generada[0];
-    for (i = 0; i < filas; i++) 
+    for (i = filas; i < filas2; i++) 
 	{
-        for (j = 0; j < columnas; j++) 
+        for (j = columnas; j < columnas2; j++) 
 		{
             if (energias[i].cant_generada[j] <= minimo) 
 			{
-				//Actualizaci髇 del valor 'minimo'
+				//Actualizaci贸n del valor 'minimo'
                 minimo = energias[i].cant_generada[j];
             }
         }
     }
+      printf("El valor m铆nimo de la cantidad generada de energia de todo el periodo analizado es: %f\n", minimo);
     return minimo;
 }
