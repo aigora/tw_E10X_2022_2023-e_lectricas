@@ -3,7 +3,7 @@
 #include"funciones.h"
 #include "string.h"
 void menu(){
-		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n");
+		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n")");
 }
 
 void guardar_datos_generacion_energias(tipos *datos){
