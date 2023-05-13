@@ -1,7 +1,8 @@
 //implementaciÃ³n de las funciones
 #include<stdio.h>
 #include"funciones.h"
-#include "string.h"
+#include <string.h>
+#define N 24
 void menu(){
 		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n")");
 }
