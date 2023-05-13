@@ -11,7 +11,9 @@ int main()
   float med;
     int nLineas=0,pos;
     int numero;
+    int r,z,f;
     float max_total,min_total;
+    float min_year, max_year;
     int linea_actual;
     //reserva de memoria dinámica
   energias = malloc(sizeof(tipos) * N);

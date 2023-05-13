@@ -4,7 +4,7 @@
 #include <string.h>
 #define N 24
 void menu(){
-		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n")");
+		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n");
 }
 
 void guardar_datos_generacion_energias(tipos *datos){
@@ -21,7 +21,7 @@ void guardar_datos_generacion_energias(tipos *datos){
   {
   	printf("Se ha abierto correctamente\n");
 int linea_actual = 0;
-    fseek(pf, 413, SEEK_SET);
+    fseek(pf, 413, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
  pos = ftell(pf);
     printf("La posiciÃ³n actual del puntero es %ld bytes.\n", pos);
 while ( linea_actual <= 23) {
@@ -128,7 +128,6 @@ float valor_maximo(int filas,int columnas,int filas2,int columnas2,tipos *energi
     }
       printf("El valor maximo de la cantidad generada de energia de todo el periodo analizado es: %f\n", maximo);
       return maximo;
-    // Inicialización de la variable 'minimo' con el primer valor de 'cant_generada'
 }
 float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energias){
 	int i;
@@ -145,6 +144,6 @@ float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energi
             }
         }
     }
-      printf("El valor mínimo de la cantidad generada de energia de todo el periodo analizado es: %f\n", minimo);
+      printf("El valor minimo de la cantidad generada de energia de todo el periodo analizado es: %f\n", minimo);
     return minimo;
 }
