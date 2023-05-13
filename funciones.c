@@ -147,3 +147,39 @@ float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energi
       printf("El valor minimo de la cantidad generada de energia de todo el periodo analizado es: %f\n", minimo);
     return minimo;
 }
+void ordenacion_minimo(int filas,tipos *energias){
+	int i;
+	int j;
+	int k;
+	float ener;
+	 for (i = 0; i < N-1; i++) {
+    for (j = i+1; j < N; j++) {
+   if (energias[filas].cant_generada[i] < energias[filas].cant_generada[j]) {
+        ener= energias[filas].cant_generada[j];
+        energias[filas].cant_generada[i] = energias[filas].cant_generada[j];
+        energias[filas].cant_generada[j] = ener;
+      }
+  }
+}
+    for(k=0;k<24;k++){
+    	printf("%f\t",  energias[filas].cant_generada[k]);
+	}
+}
+void ordenacion_maximo(int filas,tipos *energias){
+	int i;
+	int j;
+	int k;
+	float ener;
+	 for (i = 0; i < N-1; i++) {
+    for (j = i+1; j < N; j++) {
+   if (energias[filas].cant_generada[i] < energias[filas].cant_generada[j]) {
+        ener= energias[filas].cant_generada[j];
+        energias[filas].cant_generada[i] = energias[filas].cant_generada[j];
+        energias[filas].cant_generada[j] = ener;
+      }
+  }
+}
+    for(k=0;k<24;k++){
+    	printf("%f\t",  energias[filas].cant_generada[k]);
+	}
+}
