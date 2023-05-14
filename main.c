@@ -14,7 +14,7 @@ int main()
 	int nLineas=0,pos;
 	int numero;
 	int num_calculos_estadisticos;
-	int r,z,f;
+	int r,z,f,p,op;
 	float max_total,min_total;
 	float min_year, max_year;
 	int linea_actual;
@@ -74,31 +74,54 @@ int main()
 	         	break;
 	         
 			case 5:
+				
 				printf("ORDENACION DE VALORES\n");
 				// InicializaciÃ³n de la variable 'maximo' con el primer valor de 'cant_generada'
-				ordenacion_minimo(8,energias);
-				ordenacion_maximo(8,energias);
+				printf("Introduzca el tipo de energía del cual quiere ver el máximo\n");
+				scanf("%d",&p);
+			     ordenar();
+				scanf("%d",&op);
+				if(op==1){
+						ordenacion_minimo(p,energias);
+				}
+			else
+				ordenacion_maximo(p,energias);
 				break;
 			 
 	            case 6:
+	            	
 	        printf("Maximos y minimos");
-	        printf("Introduzca 1 quiere ver un valor maximo o minimo menusal y 2 si lo quiere ver en un periodo");
-	        scanf("%d",&r);
-	        if(r==1){
-	        printf("Introduzca el mes del cual quiere ver el maximo\n");
+	        	printf("Seleccione si quiere calcular un máximo o mínimo:\n");
+				menu_maximos_y_minimos();
+				scanf("%d",&r);
+				switch(r){
+					case 1:
+			printf("Introduzca el mes del cual quiere ver el maximo (0-24)\n");
 	        scanf("%d",&z);
-	        min_year=valor_minimo(0,z-1,17,z,energias);
 	        max_year=valor_maximo(0,z-1,17,z,energias);
-	}
-	else {
-		      printf("Introduzca el periodo del caul quiere ver el maximo de los meses entre(1-24)\n");
-	        scanf("%d %d",&z,&f);
-	        min_year=valor_minimo(0,z,17,f,energias);
-	        max_year=valor_maximo(0,z,17,f,energias);
-	}
-	        min_total=valor_minimo(0,0,17,24,energias);
-	        max_total=valor_maximo(0,0,17,24,energias);
+						break;
+					case 2:
+						printf("Introduzca el mes del cual quiere ver el minimo\n");
+	                  scanf("%d",&z);
+						  min_year=valor_minimo(0,z-1,17,z,energias);
+						break;		
+						case 3:
+						printf("Introduzca el periodo del caul quiere ver el maximo de los meses entre(1-24)\n");
+	                    scanf("%d %d",&z,&f);
+							max_year=valor_maximo(0,z,17,f,energias);
+							break;
+							case 4:
+						printf("Introduzca el periodo del caul quiere ver el minimo de los meses entre(1-24)\n");
+	                    scanf("%d %d",&z,&f);
+						      min_year=valor_minimo(0,z,17,f,energias);	
+					case 5:
+					   printf("Minimo y máximo totales\n");
+					min_total=valor_minimo(0,0,17,24,energias);	
+	            max_total=valor_maximo(0,0,17,24,energias);
+	        break;
+				}
 			break;
+			
 			default:
 				printf("Error\n");
 				break;

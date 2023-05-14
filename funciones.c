@@ -10,7 +10,12 @@ void menu(){
 void menu_calculos_estadisticos() {
 	printf("1 - Mediana global\n2 - Media global\nOpcion seleccionada: ");
 }
-
+void menu_maximos_y_minimos(){
+	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
+}
+void ordenar(){
+	printf("1.Ordenación de mayor a menor\n 2.Ordenación de menor a mayor\n");
+}
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
 	 int pos;
