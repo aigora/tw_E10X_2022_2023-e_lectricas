@@ -7,6 +7,10 @@ void menu(){
 		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n");
 }
 
+void menu_calculos_estadisticos() {
+	printf("1 - Mediana global\n2 - Media global\nOpcion seleccionada: ");
+}
+
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
 	 int pos;

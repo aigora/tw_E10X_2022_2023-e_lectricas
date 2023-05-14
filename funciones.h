@@ -8,6 +8,7 @@ typedef struct {
    float cant_generada[24];
 } tipos;
 void menu();
+void menu_calculos_estadisticos();
 void guardar_datos_generacion_energias(tipos*datos);
 void guardar_datos_generacion_fechas(fecha*f);
 float mediana(tipos *datos);
