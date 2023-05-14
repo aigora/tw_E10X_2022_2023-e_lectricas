@@ -152,34 +152,49 @@ void ordenacion_minimo(int filas,tipos *energias){
 	int j;
 	int k;
 	float ener;
-	 for (i = 0; i < N-1; i++) {
-    for (j = i+1; j < N; j++) {
-   if (energias[filas].cant_generada[i] < energias[filas].cant_generada[j]) {
-        ener= energias[filas].cant_generada[j];
+  //Ahora lo ordenamos
+  for(i = 0; i < N - 1; i++)
+  {
+    // Comparamos cada elemento con el siguiente
+    for(j = i + 1; j < N; j++)
+    {
+      if (energias[filas].cant_generada[i] > energias[filas].cant_generada[j])
+      {
+        // Si es mayor intercambiamos el contenido de los dos elementos
+        ener = energias[filas].cant_generada[i]; //Necesitamos una variable auxiliar de almacenamiento temporal
         energias[filas].cant_generada[i] = energias[filas].cant_generada[j];
-        energias[filas].cant_generada[j] = ener;
+        energias[filas].cant_generada[j] =ener;
       }
+    }
   }
-}
     for(k=0;k<24;k++){
     	printf("%f\t",  energias[filas].cant_generada[k]);
 	}
+	printf("\n");
 }
 void ordenacion_maximo(int filas,tipos *energias){
 	int i;
 	int j;
 	int k;
 	float ener;
-	 for (i = 0; i < N-1; i++) {
-    for (j = i+1; j < N; j++) {
-   if (energias[filas].cant_generada[i] < energias[filas].cant_generada[j]) {
-        ener= energias[filas].cant_generada[j];
+	   //Ahora lo ordenamos
+  for(i = 0; i < N - 1; i++)
+  {
+    // Comparamos cada elemento con el siguiente
+    for(j = i + 1; j < N; j++)
+    {
+      if (energias[filas].cant_generada[i] < energias[filas].cant_generada[j])
+      {
+        // Si es mayor intercambiamos el contenido de los dos elementos
+        ener = energias[filas].cant_generada[i]; //Necesitamos una variable auxiliar de almacenamiento temporal
         energias[filas].cant_generada[i] = energias[filas].cant_generada[j];
-        energias[filas].cant_generada[j] = ener;
+        energias[filas].cant_generada[j] =ener;
       }
+    }
   }
-}
+
     for(k=0;k<24;k++){
     	printf("%f\t",  energias[filas].cant_generada[k]);
 	}
+	printf("\n");
 }

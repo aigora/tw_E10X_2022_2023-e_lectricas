@@ -57,9 +57,14 @@ printf("Introduzca el numero de la operaci?n que desea realizar\n");
 		}
        // printf("%d/%d\n", fech[5].month,fech[5].year); 
          break;
+         
 		case 5:
 		printf("ORDENACION DE VALORES\n");
 		 // Inicialización de la variable 'maximo' con el primer valor de 'cant_generada'
+		 ordenacion_minimo(8,energias);
+		 ordenacion_maximo(8,energias);
+		 break;
+		 
             case 6:
         printf("Maximos y minimos");
         printf("Introduzca 1 quiere ver un valor maximo o minimo menusal y 2 si lo quiere ver en un periodo");
