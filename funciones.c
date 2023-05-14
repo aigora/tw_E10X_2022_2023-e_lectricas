@@ -83,38 +83,61 @@ int linea_actual = 0;
     // Se ha terminado de leer, luego se cierra el archivo
     fclose(pf);	
 }
-float mediana(tipos *datos){
-	 int n, i; //n es el numero de valores segun el a√±o que elijamos 
-	   float mediana, mediana2;
-    float num, sum = 0, media;
 
-    for (i = 1; i <= n; ++i)
-	{
-        printf("Ingrese el valor %d: ", i);
-        scanf("%f", &num);
-        sum += num;
-    }
 
-  media = sum / n;
-    printf("La media es: %.2f", media);		
-    //para n numero de datos 
+// Calcular la mediana
+float mediana(tipos *energias){
+	// Crear el vector inicial vacio
+	float* vector = NULL;
+	int n = 0;
 
-    // Leer los datos y calcular la mediana
-    for (i = 0; i < n; i++) {
-        scanf("%f", &mediana2);
-        if (i == n / 2) {  // Si se ha le√≠do la mitad de los datos, almacenar la mediana y salir del bucle
-            mediana = mediana2;
-            if (n % 2 == 0) {  // Si el n√∫mero de elementos es par, leer un valor adicional y calcular la mediana como el promedio de los dos valores centrales
-                mediana= (mediana + mediana2) / 2;
-            }
-            break;
+	// Agregar elementos
+	int i;
+    int j;
+    for (i = 0; i < 17; i++) {
+		for (j = 0; j < 24; j++) {
+        	float elem = energias[i].cant_generada[j];
+        	vector = (int*) realloc(vector, sizeof(int) * (n+1));
+        	vector[n] = elem;
+        	n++;
         }
-    }
-
-    printf("La mediana es: %f", mediana);
-
-    return 0;
+	}
+	
+	// Ordenar vector
+	ordenar_vector(vector, n);
+	
+	// Calcular posicion de la mediana en la lista ordenada
+	int posicion_mediana = n/2;
+	
+	if(n%2 == 0) {
+		// Si la lista tiene un tamaÒo par, la mediana sera el promedio de los dos valores centrales
+		return (vector[posicion_mediana-1] + vector[posicion_mediana])/2.0;
+	} else {
+		// Si la lista tiene un tamaÒo impar, la mediana sera el valor en la posicion central
+		return vector[posicion_mediana];
+	}
+	
 }
+
+void ordenar_vector(float vector[], int n){
+	int i, j , min_index;
+	for (i=0; i<n-1;i++){
+		min_index = i;
+		for (j=i+1; j<n; j++) {
+			if(vector[j]<vector[min_index]){
+				min_index = j;
+			}
+		}
+		swap(&vector[min_index], &vector[i]);
+	}
+}
+
+void swap(float* n1, float* n2){
+	float n_temporal = *n1;
+	*n1 = *n2;
+	*n2 = n_temporal;
+}
+
 
 float valor_maximo(int filas,int columnas,int filas2,int columnas2,tipos *energias){
 	 float maximo = energias[0].cant_generada[0];

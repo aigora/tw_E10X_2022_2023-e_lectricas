@@ -8,6 +8,7 @@ int main()
 	tipos *energias;
 	fecha *fech;
 	char x;
+	int tam;
 	float mediana_global;
 	float media_global;
 	int nLineas=0,pos;
@@ -35,11 +36,11 @@ int main()
 				switch(num_calculos_estadisticos){
 					case 1:
 						mediana_global=mediana(energias);
-						printf("MEDIANA: %d\n", mediana_global);
+						printf("La mediana de todos los datos es: %f\n", mediana_global);
 						break;
 					case 2:
-						media_global=media(energias);
-						printf("MEDIA: %d\n", media_global);
+						//media_global=media(energias);
+						printf("La media de todos los datos es: %f\n", media_global);
 						break;		
 				}
 	          	
@@ -84,7 +85,7 @@ int main()
 	        printf("Introduzca 1 quiere ver un valor maximo o minimo menusal y 2 si lo quiere ver en un periodo");
 	        scanf("%d",&r);
 	        if(r==1){
-	        printf("Introduzca el mes del caul quiere ver el maximo\n");
+	        printf("Introduzca el mes del cual quiere ver el maximo\n");
 	        scanf("%d",&z);
 	        min_year=valor_minimo(0,z-1,17,z,energias);
 	        max_year=valor_maximo(0,z-1,17,z,energias);
