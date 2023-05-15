@@ -24,7 +24,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 
   if (pf == NULL)
   {
-    printf("ERROR AL ABRIR EL FICHERO DE LECTURA");
+    printf("Error al abrir el fichero de lectura");
   }
   else
   {
@@ -229,4 +229,21 @@ void ordenacion_maximo(int filas,tipos *energias){
     	printf("%f\t",  energias[filas].cant_generada[k]);
 	}
 	printf("\n");
+}
+
+void buscar(char cadena[40],tipos *energias){
+	FILE *pf;
+	int i=0;
+	char buscar[40];
+	pf = fopen("generacion_por_tecnologias.txt", "r");
+while (fscanf(pf, "%s", buscar) != EOF) {
+    if (strcmp(buscar, cadena) == 0) {
+   printf("Se ha encontrado este tipo de energía\n");
+   break;
+}
+i++;
+}
+printf("No se ha encontrado este tipo de energía\n");
+printf("Desea añadir a la lista anterior\n");
+fclose(pf);
 }

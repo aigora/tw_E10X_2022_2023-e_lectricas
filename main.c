@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "funciones.h"
-#include "string.h"
+#include <string.h>
 #include <stdlib.h>
 #define N 23
 int main()
@@ -18,6 +18,7 @@ int main()
 	float max_total,min_total;
 	float min_year, max_year;
 	int linea_actual;
+	char cad[40];
 	// Reserva de memoria dinamica
 	energias = malloc(sizeof(tipos) * N);
 	fech = malloc(sizeof(fecha) * 1);
@@ -53,28 +54,14 @@ int main()
 				break;
 			case 4:
 				printf("BUSQUEDAS\n");
-		        printf("%s\n", energias[0].tipo_energia);
-	        	for(linea_actual=0;linea_actual<18;linea_actual++){
-	        		printf("%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f",
-			       energias[linea_actual].cant_generada[0],
-			       energias[linea_actual].cant_generada[1], energias[linea_actual].cant_generada[2],
-			       energias[linea_actual].cant_generada[3], energias[linea_actual].cant_generada[4],
-			        energias[linea_actual].cant_generada[5], energias[linea_actual].cant_generada[6],
-			        energias[linea_actual].cant_generada[7], energias[linea_actual].cant_generada[8],
-			        energias[linea_actual].cant_generada[9], energias[linea_actual].cant_generada[10],
-			        energias[linea_actual].cant_generada[11], energias[linea_actual].cant_generada[12],
-			        energias[linea_actual].cant_generada[13], energias[linea_actual].cant_generada[14],
-			        energias[linea_actual].cant_generada[15], energias[linea_actual].cant_generada[16],
-			        energias[linea_actual].cant_generada[17], energias[linea_actual].cant_generada[18],
-			        energias[linea_actual].cant_generada[19], energias[linea_actual].cant_generada[20],
-			        energias[linea_actual].cant_generada[21], energias[linea_actual].cant_generada[22],
-			        energias[linea_actual].cant_generada[23]);
-				}
+				printf("Introduzca la palabra que desea buscar con la primera letra en mayuscula\n");
+				scanf("%s",cad);
+		       buscar(cad,energias);
+	        
 	       		// printf("%d/%d\n", fech[5].month,fech[5].year); 
 	         	break;
 	         
 			case 5:
-				
 				printf("ORDENACION DE VALORES\n");
 				// InicializaciÃ³n de la variable 'maximo' con el primer valor de 'cant_generada'
 				printf("Introduzca el tipo de energía del cual quiere ver el máximo\n");
@@ -82,43 +69,43 @@ int main()
 			     ordenar();
 				scanf("%d",&op);
 				if(op==1){
-						ordenacion_minimo(p,energias);
+			      ordenacion_minimo(p,energias);
 				}
-			else
-				ordenacion_maximo(p,energias);
+			    else
+				  ordenacion_maximo(p,energias);
 				break;
 			 
-	            case 6:
-	            	
+	        case 6:   	
 	        printf("Maximos y minimos");
 	        	printf("Seleccione si quiere calcular un máximo o mínimo:\n");
 				menu_maximos_y_minimos();
 				scanf("%d",&r);
 				switch(r){
 					case 1:
-			printf("Introduzca el mes del cual quiere ver el maximo (0-24)\n");
-	        scanf("%d",&z);
-	        max_year=valor_maximo(0,z-1,17,z,energias);
-						break;
+			           printf("Introduzca el mes del cual quiere ver el maximo (0-24)\n");
+	                   scanf("%d",&z);
+	                   max_year=valor_maximo(0,z-1,17,z,energias);
+					   break;
 					case 2:
 						printf("Introduzca el mes del cual quiere ver el minimo\n");
-	                  scanf("%d",&z);
-						  min_year=valor_minimo(0,z-1,17,z,energias);
+	                    scanf("%d",&z);
+						min_year=valor_minimo(0,z-1,17,z,energias);
 						break;		
-						case 3:
+					case 3:
 						printf("Introduzca el periodo del caul quiere ver el maximo de los meses entre(1-24)\n");
 	                    scanf("%d %d",&z,&f);
-							max_year=valor_maximo(0,z,17,f,energias);
-							break;
-							case 4:
+						max_year=valor_maximo(0,z,17,f,energias);
+						break;
+				    case 4:
 						printf("Introduzca el periodo del caul quiere ver el minimo de los meses entre(1-24)\n");
 	                    scanf("%d %d",&z,&f);
-						      min_year=valor_minimo(0,z,17,f,energias);	
+					    min_year=valor_minimo(0,z,17,f,energias);
+						break;	
 					case 5:
 					   printf("Minimo y máximo totales\n");
-					min_total=valor_minimo(0,0,17,24,energias);	
-	            max_total=valor_maximo(0,0,17,24,energias);
-	        break;
+					   min_total=valor_minimo(0,0,17,24,energias);	
+	                   max_total=valor_maximo(0,0,17,24,energias);
+	                   break;
 				}
 			break;
 			
