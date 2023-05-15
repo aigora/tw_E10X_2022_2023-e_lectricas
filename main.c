@@ -14,7 +14,7 @@ int main()
 	int nLineas=0,pos;
 	int numero;
 	int num_calculos_estadisticos;
-	int r,z,f,p,op;
+	int r,z,f,p,op,t;
 	float max_total,min_total;
 	float min_year, max_year;
 	int linea_actual;
@@ -25,7 +25,7 @@ int main()
    	// Guardado de datos del fichero a las siguientes funciones
   	guardar_datos_generacion_energias(energias);
   	guardar_datos_generacion_fechas(fech);
-  
+  do{
 	printf("Introduzca el numero de la operacion que desea realizar:\n");
 	  menu(); //carga del menu
 		scanf("%d",&numero);
@@ -44,7 +44,6 @@ int main()
 						printf("La media de todos los datos es: %f\n", media_global);
 						break;		
 				}
-	          	
 				break;
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
@@ -113,6 +112,8 @@ int main()
 				printf("Error\n");
 				break;
 		}
+	}while(cerrar()!=1);
+		printf("Hasta pronto\n");
 	        free(energias);
 	   free(fech);
 	  return 0;	

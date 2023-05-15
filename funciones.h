@@ -20,3 +20,4 @@ float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energi
 void ordenacion_maximo(int filas,tipos *energias);
 void ordenacion_minimo(int filas,tipos *energias);
 void buscar(char cadena[40],tipos *energias);
+int cerrar( );

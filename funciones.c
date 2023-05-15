@@ -16,6 +16,7 @@ void menu_maximos_y_minimos(){
 void ordenar(){
 	printf("1.Ordenación de mayor a menor\n 2.Ordenación de menor a mayor\n");
 }
+
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
 	 int pos;
@@ -246,4 +247,14 @@ i++;
 printf("No se ha encontrado este tipo de energía\n");
 printf("Desea añadir a la lista anterior\n");
 fclose(pf);
+}
+int cerrar(){
+	int p;
+	printf("Desea cerrar sesión\n");
+	printf("1. Si\n 2. No\n");
+	scanf("%d",&p);
+	if(p==2){
+		system("cls");
+	}
+return p;
 }
