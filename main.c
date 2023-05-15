@@ -11,6 +11,7 @@ int main()
 	int tam;
 	float mediana_global;
 	float media_global;
+	float varianza_global;
 	int nLineas=0,pos;
 	int numero;
 	int num_calculos_estadisticos;
@@ -39,9 +40,13 @@ int main()
 						printf("La mediana de todos los datos es: %f\n", mediana_global);
 						break;
 					case 2:
-						//media_global=media(energias);
+						media_global=media(energias);
 						printf("La media de todos los datos es: %f\n", media_global);
 						break;		
+					case 3:
+						//varianza_global= varianza(energias)
+						printf("La varianza de todos los datos es : %f\n", varianza_global);
+						break;
 				}
 	          	
 				break;
@@ -91,7 +96,7 @@ int main()
 	        max_year=valor_maximo(0,z-1,17,z,energias);
 	}
 	else {
-		      printf("Introduzca el periodo del caul quiere ver el maximo de los meses entre(1-24)\n");
+		      printf("Introduzca el periodo del cual quiere ver el maximo de los meses entre(1-24)\n");
 	        scanf("%d %d",&z,&f);
 	        min_year=valor_minimo(0,z,17,f,energias);
 	        max_year=valor_maximo(0,z,17,f,energias);

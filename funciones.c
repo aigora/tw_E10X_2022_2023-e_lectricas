@@ -70,7 +70,7 @@ int linea_actual = 0;
  pos = ftell(pf);
     fseek(pf, 250, SEEK_SET);
  pos = ftell(pf);
-    printf("La posiciÃ³n actual del puntero es %ld bytes.\n", pos);
+    printf("La posicion actual del puntero es %ld bytes.\n", pos);
     while ( linea_actual ==5) {
 	fscanf(pf,"%s %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d",titulo,&f[0].month,&f[0].year,&f[1].month,&f[1].year,&f[2].month,&f[2].year,&f[3].month,&f[3].year,
 	&f[4].month,&f[4].year,&f[5].month,&f[5].year,&f[6].month,&f[6].year,&f[7].month,&f[7].year,&f[8].month,&f[8].year,
@@ -118,6 +118,52 @@ float mediana(tipos *energias){
 	}
 	
 }
+//calcular la media 
+
+
+float  media(tipos*energias)
+{
+	// Crear el vector inicial vacio
+	float* vector = NULL;
+	int n = 0;
+
+	// Agregar elementos
+	int i;
+    int j;
+    for (i = 0; i < 17; i++) 
+	{
+		for (j = 0; j < 24; j++) {
+        	float elem = energias[i].cant_generada[j];
+        	vector = (int*) realloc(vector, sizeof(int) * (n+1));
+        	vector[n] = elem;
+        	n++;
+        }
+	}
+
+    
+    // Calcular la suma de los elementos
+    float suma = 0;
+    for (i = 0; i < n; i++) 
+	{
+        suma =  vector[i] +1 ;
+    }
+    
+    // Calcular la media
+    float media = suma / n;
+    
+    // Devolver el resultado de la media
+    return media;
+}
+
+	
+	
+
+
+
+
+
+
+
 
 void ordenar_vector(float vector[], int n){
 	int i, j , min_index;
