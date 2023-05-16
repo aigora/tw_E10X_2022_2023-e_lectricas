@@ -1,121 +1,128 @@
 #include <stdio.h>
 #include "funciones.h"
-#include <string.h>
+#include "string.h"
 #include <stdlib.h>
 #define N 23
 int main()
 {
-	tipos *energias;
-	fecha *fech;
-	char x;
-	int tam;
-	float mediana_global;
-	float media_global;
-	int nLineas=0,pos;
-	int numero;
-	int num_calculos_estadisticos;
-	int r,z,f,p,op,t;
-	float max_total,min_total;
-	float min_year, max_year;
-	int linea_actual;
-	char cad[40];
-	// Reserva de memoria dinamica
-	energias = malloc(sizeof(tipos) * N);
-	fech = malloc(sizeof(fecha) * 1);
-   	// Guardado de datos del fichero a las siguientes funciones
-  	guardar_datos_generacion_energias(energias);
-  	guardar_datos_generacion_fechas(fech);
-  do{
-	printf("Introduzca el numero de la operacion que desea realizar:\n");
-	  menu(); //carga del menu
-		scanf("%d",&numero);
-		switch(numero){
-			case 1:
-			printf("Seleccione el calculo estadistico a realizar:\n");
-				menu_calculos_estadisticos();
-				scanf("%d",&num_calculos_estadisticos);
-				switch(num_calculos_estadisticos){
-					case 1:
-						mediana_global=mediana(energias);
-						printf("La mediana de todos los datos es: %f\n", mediana_global);
-						break;
-					case 2:
-						//media_global=media(energias);
-						printf("La media de todos los datos es: %f\n", media_global);
-						break;		
-				}
-				break;
-			case 2:
-				printf("CARGA DE NUEVOS DATOS\n");
-				break;
-			case 3:
-				printf("GUARDAR RESULTADOS\n");
-				break;
-			case 4:
-				printf("BUSQUEDAS\n");
-				printf("Introduzca la palabra que desea buscar con la primera letra en mayuscula\n");
-				scanf("%s",cad);
-		       buscar(cad,energias);
-	        
-	       		// printf("%d/%d\n", fech[5].month,fech[5].year); 
-	         	break;
-	         
-			case 5:
-				printf("ORDENACION DE VALORES\n");
-				// InicializaciÃ³n de la variable 'maximo' con el primer valor de 'cant_generada'
-				printf("Introduzca el tipo de energía del cual quiere ver el máximo\n");
-				scanf("%d",&p);
-			     ordenar();
-				scanf("%d",&op);
-				if(op==1){
-			      ordenacion_minimo(p,energias);
-				}
-			    else
-				  ordenacion_maximo(p,energias);
-				break;
-			 
-	        case 6:   	
-	        printf("Maximos y minimos");
-	        	printf("Seleccione si quiere calcular un máximo o mínimo:\n");
-				menu_maximos_y_minimos();
-				scanf("%d",&r);
-				switch(r){
-					case 1:
-			           printf("Introduzca el mes del cual quiere ver el maximo (0-24)\n");
-	                   scanf("%d",&z);
-	                   max_year=valor_maximo(0,z-1,17,z,energias);
-					   break;
-					case 2:
-						printf("Introduzca el mes del cual quiere ver el minimo\n");
-	                    scanf("%d",&z);
-						min_year=valor_minimo(0,z-1,17,z,energias);
-						break;		
-					case 3:
-						printf("Introduzca el periodo del caul quiere ver el maximo de los meses entre(1-24)\n");
-	                    scanf("%d %d",&z,&f);
-						max_year=valor_maximo(0,z,17,f,energias);
-						break;
-				    case 4:
-						printf("Introduzca el periodo del caul quiere ver el minimo de los meses entre(1-24)\n");
-	                    scanf("%d %d",&z,&f);
-					    min_year=valor_minimo(0,z,17,f,energias);
-						break;	
-					case 5:
-					   printf("Minimo y máximo totales\n");
-					   min_total=valor_minimo(0,0,17,24,energias);	
-	                   max_total=valor_maximo(0,0,17,24,energias);
-	                   break;
-				}
-			break;
+  tipos *energias;
+  fecha *fech;
+  char x;
+    int nLineas=0,pos;
+    int numero;
+energias = malloc(sizeof(tipos) * N);
+fech = malloc(sizeof(fecha) * 1);
+  // Defino un vector para cada variable a leer del fichero	
+  int i = 0;
+  guardar_datos_generacion_energias(energias);
+guardar_datos_generacion_fechas(fech);
+ //Mostramos resultados
+ printf("Introduzca el numero de la operacion que desea realizar\n");
+menu();
+	scanf("%d",&numero);
+	switch(numero){
+		case 1:
+		printf("CALCULOS ESTADISTICOS\n");
+		{
+
+    int n, i; //n es el numero de valores segun el año que elijamos 
+    float num, sum = 0, media;
+
+    for (i = 1; i <= n; ++i)
+	{
+        printf("Ingrese el valor %d: ", i);
+        scanf("%f", &num);
+        sum += num;
+    }
+
+  media = sum / n;
+    printf("La media es: %.2f", media);		
+	}
+	{
+    int n, mediana, mediana2;
+    printf("Ingrese el número de elementos en el conjunto de datos: ");
+    scanf("%d", &n);
+    //para n numero de datos 
+
+    // Leer los datos y calcular la mediana
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &mediana2);
+        if (i == n / 2) {  // Si se ha leído la mitad de los datos, almacenar la mediana y salir del bucle
+            mediana = mediana2;
+            if (n % 2 == 0) {  // Si el número de elementos es par, leer un valor adicional y calcular la mediana como el promedio de los dos valores centrales
+                scanf("%d", &mediana2);
+                mediana= (mediana + mediana2) / 2;
+            }
+            break;
+        }
+    }
+
+    printf("La mediana es: %d", mediana);
+
+    return 0;
+}
+
+    return 0;
+}		
 			
-			default:
-				printf("Error\n");
+		break;
+		case 2:
+		printf("CARGA DE NUEVOS DATOS\n");
+		{
+			printf("Introduce nuevos datos");
+			
 				break;
 		}
-	}while(cerrar()!=1);
-		printf("Hasta pronto\n");
-	        free(energias);
-	   free(fech);
-	  return 0;	
+	
+		case 3:
+		printf("GUARDAR RESULTADOS\n");
+		{
+			break;
+		}
+		
+		case 4:
+		printf("BUSQUEDAS\n");
+        printf("%s\n", energias[5].tipo_energia);
+        printf("%d/%d\n", fech[5].month,fech[5].year); 
+        // Inicialización de la variable 'maximo' con el primer valor de 'cant_generada'
+        int maximo = energias[1].cant_generada[0];
+        int i;
+        for (int i = 2; i < N; i++) 
+		{
+			for (int j = 0; j < 12; j++) {
+            if (energias[i].cant_generada[j] > maximo) 
+            {
+            	//Actualización del valor 'maximo'
+            	maximo = energias[i].cant_generada[j];
+			}
+        }
+    printf("El valor maximo de la cantidad generada de energia es: %d\n", maximo);
+    // Inicialización de la variable 'minimo' con el primer valor de 'cant_generada'
+    int minimo = energias[1].cant_generada[0];
+    for (int i = 2; i < N; i++) 
+	{
+        for (int j = 0; j < 12; j++) 
+		{
+            if (energias[i].cant_generada[j] < minimo) 
+			{
+				//Actualización del valor 'minimo'
+                minimo = energias[i].cant_generada[j];
+            }
+        }
+    }
+    printf("El valor mínimo de la cantidad generada de energia es: %d\n", minimo);
+    break;
+
+		break;
+		case 5:
+		printf("ORDENACION DE VALORES\n");
+		break;
+		default:
+			printf("Error\n");
+			break;
 	}
+        free(energias);
+   free(fech);
+  return 0;	
+}
 
