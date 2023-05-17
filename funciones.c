@@ -10,6 +10,12 @@ void menu(){
 void menu_calculos_estadisticos() {
 	printf("1 - Mediana global\n2 - Media global\nOpcion seleccionada: ");
 }
+void menu_maximos_y_minimos(){
+	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
+}
+void ordenar(){
+	printf("1.Ordenación de mayor a menor\n 2.Ordenación de menor a mayor\n");
+}
 
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
@@ -19,7 +25,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 
   if (pf == NULL)
   {
-    printf("ERROR AL ABRIR EL FICHERO DE LECTURA");
+    printf("Error al abrir el fichero de lectura");
   }
   else
   {
@@ -155,6 +161,20 @@ float  media(tipos*energias)
     return media;
 }
 
+float varianza_global(tipos *energias)
+{
+	
+	
+	
+	
+}
+
+
+
+float desviacion_tipica_global(tipos *energias)
+{
+	//hacer la raiz cuadrada de la varianza
+}
 	
 	
 
@@ -270,4 +290,31 @@ void ordenacion_maximo(int filas,tipos *energias){
     	printf("%f\t",  energias[filas].cant_generada[k]);
 	}
 	printf("\n");
+}
+
+void buscar(char cadena[40],tipos *energias){
+	FILE *pf;
+	int i=0;
+	char buscar[40];
+	pf = fopen("generacion_por_tecnologias.txt", "r");
+while (fscanf(pf, "%s", buscar) != EOF) {
+    if (strcmp(buscar, cadena) == 0) {
+   printf("Se ha encontrado este tipo de energía\n");
+   break;
+}
+i++;
+}
+printf("No se ha encontrado este tipo de energía\n");
+printf("Desea añadir a la lista anterior\n");
+fclose(pf);
+}
+int cerrar(){
+	int p;
+	printf("Desea cerrar sesión\n");
+	printf("1. Si\n 2. No\n");
+	scanf("%d",&p);
+	if(p==2){
+		system("cls");
+	}
+return p;
 }
