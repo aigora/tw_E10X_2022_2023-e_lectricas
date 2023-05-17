@@ -1,4 +1,5 @@
 [Editors]
+<<<<<<< HEAD
 Order=0,1
 Focused=1
 [Editor_0]
@@ -20,15 +21,45 @@ TopLine=206
 CursorCol=22
 CursorRow=115
 TopLine=13
+=======
+<<<<<<< Updated upstream
+Order=2,1,0
+Focused=2
+[Editor_0]
+CursorCol=4
+CursorRow=66
+TopLine=37
+=======
+Order=2,1,0
+Focused=1
+LeftChar=1
+[Editor_0]
+CursorCol=5
+CursorRow=48
+TopLine=18
+>>>>>>> Stashed changes
+>>>>>>> 8cf8fa2fcdbfc683c37e0454a89fd408c4ed5790
 LeftChar=1
 [Editor_1]
 CursorCol=13
-CursorRow=23
-TopLine=2
+CursorRow=10
+TopLine=1
 LeftChar=1
 [Editor_2]
+<<<<<<< HEAD
 CursorCol=15
 CursorRow=257
 TopLine=240
 >>>>>>> ba6967e28780406d8183c46f896585582c62a0b6
+=======
+<<<<<<< Updated upstream
+CursorCol=4
+CursorRow=68
+TopLine=1
+=======
+CursorCol=32
+CursorRow=68
+TopLine=1
+>>>>>>> Stashed changes
+>>>>>>> 8cf8fa2fcdbfc683c37e0454a89fd408c4ed5790
 LeftChar=1

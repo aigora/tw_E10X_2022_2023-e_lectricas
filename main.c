@@ -8,6 +8,7 @@ int main()
 	tipos *energias;
 	fecha *fech;
 	char x;
+	int tipo;
 	int tam;
 	float mediana_global;
 	float media_global;
@@ -95,6 +96,13 @@ int main()
 	        scanf("%d",&z);
 	        min_year=valor_minimo(0,z-1,17,z,energias);
 	        max_year=valor_maximo(0,z-1,17,z,energias);
+	        
+	        case 7:
+	        	switch(tipo);
+	        	{
+	        		printf("Pulsa el numero del tipo de energia que desee \n");
+	        		printf("1- Eolica\n 2-Turbinacion bombeo \n");
+				}
 	}
 	else {
 		      printf("Introduzca el periodo del cual quiere ver el maximo de los meses entre(1-24)\n");
