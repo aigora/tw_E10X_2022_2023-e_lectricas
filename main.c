@@ -74,8 +74,8 @@ int main()
 	         
 			case 5:
 				printf("ORDENACION DE VALORES\n");
-				// Inicialización de la variable 'maximo' con el primer valor de 'cant_generada'
-				printf("Introduzca el tipo de energ�a del cual quiere ver el m�ximo\n");
+				// InicializaciÃ³n de la variable 'maximo' con el primer valor de 'cant_generada'
+				printf("Introduzca el tipo de energía del cual quiere ver el máximo de (0-17)\n");//por ahora se pone de 0 a 17 y luego imprimo 
 				scanf("%d",&p);
 			     ordenar();
 				scanf("%d",&op);
@@ -88,32 +88,7 @@ int main()
 			 
 	        case 6:   	
 	        printf("Maximos y minimos");
-
-	        printf("Introduzca 1 quiere ver un valor maximo o minimo menusal y 2 si lo quiere ver en un periodo");
-	        scanf("%d",&r);
-	        if(r==1){
-	        printf("Introduzca el mes del cual quiere ver el maximo\n");
-	        scanf("%d",&z);
-	        min_year=valor_minimo(0,z-1,17,z,energias);
-	        max_year=valor_maximo(0,z-1,17,z,energias);
-	        
-	        case 7:
-	        	switch(tipo);
-	        	{
-	        		printf("Pulsa el numero del tipo de energia que desee \n");
-	        		printf("1- Eolica\n 2-Turbinacion bombeo \n");
-				}
-	}
-	else {
-		      printf("Introduzca el periodo del cual quiere ver el maximo de los meses entre(1-24)\n");
-	        scanf("%d %d",&z,&f);
-	        min_year=valor_minimo(0,z,17,f,energias);
-	        max_year=valor_maximo(0,z,17,f,energias);
-	}
-	        min_total=valor_minimo(0,0,17,24,energias);
-	        max_total=valor_maximo(0,0,17,24,energias);
-
-	        	printf("Seleccione si quiere calcular un m�ximo o m�nimo:\n");
+	        printf("Seleccione si quiere calcular un máximo o mínimo:\n");
 				menu_maximos_y_minimos();
 				scanf("%d",&r);
 				switch(r){
@@ -138,17 +113,23 @@ int main()
 					    min_year=valor_minimo(0,z,17,f,energias);
 						break;	
 					case 5:
-					   printf("Minimo y m�ximo totales\n");
-					   min_total=valor_minimo(0,0,17,24,energias);	
+					   printf("Minimo y máximo totales\n");
+			  min_total=valor_minimo(0,0,17,24,energias);	
 	                   max_total=valor_maximo(0,0,17,24,energias);
 	                   break;
 				}
-				
-			break;
-			
-			default:
-				printf("Error\n");
 				break;
+	        case 7:
+	        	//switch(tipo);
+	        	//{
+	        	//	printf("Pulsa el numero del tipo de energia que desee \n");
+	        	//	printf("1- Eolica\n 2-Turbinacion bombeo \n");
+			//	}
+		//}
+			//break;
+			default:
+			printf("Error\n");
+			break;
 		}
 	}while(cerrar()!=1);
 		printf("Hasta pronto\n");
