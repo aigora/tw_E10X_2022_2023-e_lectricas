@@ -5,8 +5,7 @@
 #define N 23
 int main()
 {
-	tipos *energias;
-	fecha *fech;
+	tipos *energias,*ener;
 	char x;
 	int tipo;
 	int tam;
@@ -24,10 +23,10 @@ int main()
 	char cad[40];
 	// Reserva de memoria dinamica
 	energias = malloc(sizeof(tipos) * N);
-	fech = malloc(sizeof(fecha) * 1);
+	ener = malloc(sizeof(tipos) * 1);
    	// Guardado de datos del fichero a las siguientes funciones
   	guardar_datos_generacion_energias(energias);
-  	guardar_datos_generacion_fechas(fech);
+  	guardar_datos_generacion_fechas(energias);
   do{
 	printf("Introduzca el numero de la operacion que desea realizar:\n");
 	  menu(); //carga del menu
@@ -127,6 +126,9 @@ int main()
 			//	}
 		//}
 			//break;
+			case 8:
+				printf("%d/%d\n",energias[3].f[20].month,energias[3].f[20].year);
+				break;
 			default:
 			printf("Error\n");
 			break;
@@ -134,7 +136,7 @@ int main()
 	}while(cerrar()!=1);
 		printf("Hasta pronto\n");
 	        free(energias);
-	   free(fech);
+	   free(ener);
 	  return 0;	
 	}
 

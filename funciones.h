@@ -6,11 +6,12 @@ typedef struct{
 typedef struct {
     char tipo_energia[50];
    float cant_generada[24];
+   fecha f[24];
 } tipos;
 void menu();
 void menu_calculos_estadisticos();
 void guardar_datos_generacion_energias(tipos*datos);
-void guardar_datos_generacion_fechas(fecha*f);
+void guardar_datos_generacion_fechas(tipos*datos);
 float mediana(tipos *energias);
 void swap(float* n1, float* n2);
 void ordenar_vector(float vector[], int n);
