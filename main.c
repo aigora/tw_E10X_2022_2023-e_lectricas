@@ -87,8 +87,7 @@ int main()
 					   	case 3:
 					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",moda2_tipo_energia);
-					   				
-					   				break;
+					   		break;
 					   	
 					   }
 				    }

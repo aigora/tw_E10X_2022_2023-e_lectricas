@@ -15,6 +15,7 @@ void guardar_datos_generacion_fechas(tipos*datos);
 float mediana(tipos *energias);
 float mediana2(int m,tipos *energias);//funcion para calculo anual y mensual
 float media2(int m,tipos *energias);//funcion calculo anual y mensual
+float moda2(int m,tipos *energias);//funcion calculo anual y mensual
 void swap(float* n1, float* n2);
 void ordenar_vector(float vector[], int n);
 float media(tipos *energias);

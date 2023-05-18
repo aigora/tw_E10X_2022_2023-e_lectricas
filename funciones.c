@@ -341,10 +341,10 @@ float media2(int m,tipos *energias)//funcion para calculo anual y mensual
 	med=med/24;
 	return med;
 }
-float mediana2(int m, tipos *energias)
+float mediana2(int m, tipos *energias)//funcion para calculo anual y mensual
 {
     int i, j;
-    int n = 24; // Número de elementos en el arreglo
+    int n = 24; 
 
     float valores[n];
     for (i = 0; i < n; i++) {
@@ -379,7 +379,7 @@ float mediana2(int m, tipos *energias)
 
     return mediana2;
 }
-float moda2(int m, tipos *energias)
+float moda2(int m, tipos *energias)//funcion para calculo anual y mensual
 {
 	int i, j;
 
