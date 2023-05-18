@@ -18,6 +18,7 @@ int main()
 	int numero;
 	int num_calculos_estadisticos,num_calculos_estadisticos_mensuales;
 	float med_tipo_energia;
+	float mediana2_tipo_energia;
 	int calculos_estadisticos_energia_especifica;
 	int r,z,f,p,op,t;
 	float max_total,min_total;
@@ -78,7 +79,9 @@ int main()
 					   		med_tipo_energia=media2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		 printf("%f\n",med_tipo_energia);
 					   		break;
-					   		case 2:
+					   	case 2:
+					   		mediana2_tipo_energia=mediana2(calculos_estadisticos_energia_especifica,energias);
+					   		printf("%f\n",mediana2_tipo_energia);
 					   			break;
 					   			case 3:
 					   				break;

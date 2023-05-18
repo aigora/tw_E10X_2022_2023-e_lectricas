@@ -11,7 +11,7 @@ void menu_calculos_estadisticos() {
 	printf("1 - Mediana global\n2 - Media global\n Opcion seleccionada: ");
 }
 	void menu_calculos_estadisticos_mensuales(){
-		printf("1.Media menusla\n");
+		printf("1.Media mensual\n2.Mediana mensual\n");
 	}
 void menu_maximos_y_minimos(){
 	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
@@ -341,7 +341,42 @@ float media2(int m,tipos *energias)//funcion para calculo anual y mensual
 	med=med/24;
 	return med;
 }
-float mediana2(int m,tipos *energias)//funcion calculo anual y mensual
+float mediana2(int m, tipos *energias)
 {
-	
+    int i, j;
+    int n = 24; // Número de elementos en el arreglo
+
+    float valores[n];
+    for (i = 0; i < n; i++) {
+        valores[i] = energias[m].cant_generada[i];
+    }
+
+    // Ordenamos los datos de forma ascendente 
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) 
+		{
+            if (valores[j] > valores[j + 1]) 
+			{
+                float temp = valores[j];
+                valores[j] = valores[j + 1];
+                valores[j + 1] = temp;
+            }
+        }
+    }
+
+
+    float mediana2;
+    if (n % 2 == 0) 
+	{
+        // Si hay un número par de elementos, la mediana sera el promedio de los dos valores centrales
+        mediana2 = (valores[n / 2 - 1] + valores[n / 2]) / 2.0;
+    } 
+	else 
+	{
+        // Si hay un número impar de elementos, tomamos el valor del medio
+        mediana2 = valores[n / 2];
+    }
+
+    return mediana2;
 }
+
