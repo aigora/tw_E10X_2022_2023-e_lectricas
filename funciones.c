@@ -24,6 +24,9 @@ void menu_calculos_estadisticos_energia_especifica(){
 	printf(" 8-Ciclo combinado \n 9-Hidroeolica\n 10-Eolica\n 11-Solar fotovoltaica\n 12-Solar termica\n 13-Otros renovables\n 14-Congeneracion\n");
 	printf(" 15-Residuos no renovables \n 16-Residuos renovables\n 17-Generacion total\n ");
 }
+void imprimir_datos_fichero(){
+	printf("1.Imprimir todos los datos ordenados en meses\n 2.Imprimir los datos de un mes\n 3. Imprimir los datos de una energia");
+}
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
 	 int pos;
@@ -63,15 +66,13 @@ while ( linea_actual <= 23) {
     // Se ha terminado de leer, luego se cierra el archivo
     fclose(pf);	
 }
-void guardar_datos_generacion_fechas(tipos *datos){
+void guardar_datos_generacion_fechas(fecha *f){
      FILE *pf;
      int i = 0,j;
      int pos;
      char lectura;
-     char titulo[25];
-     int linea_actual = 0;
   // Abrir el archivo de lectura
-   pf = fopen("generacion_por_tecnologias.txt", "r");
+   pf = fopen("generacion_por_tecnologias_21_22_puntos_simplificado.csv", "r");
 
   if (pf == NULL)
   {
@@ -80,25 +81,15 @@ void guardar_datos_generacion_fechas(tipos *datos){
   else
   {
       printf("Se ha abierto correctamente\n");
-int linea_actual = 0;
-    printf("La posicion actual del puntero es %ld bytes.\n", pos);
-    while(fscanf(pf,"%c",&lectura)!=EOF){
-        if(lectura=='\n'){
-            linea_actual++;
-            if(linea_actual==4){
              fseek(pf,220, SEEK_SET);
-                            for(i=0;i<24;i++){
-                                        for(j=0;j<18;j++){
-                    fscanf(pf,"%d/%d,",&datos[j].f[i].month,&datos[j].f[i].year);
+             pos=tell(pf);
+                 printf("La posicion actual del puntero es %ld bytes.\n", pos);
+                for(i=0;i<24;i++){
+                    fscanf(pf,"%d-%d",&f[i].month,&f[i].year);
+                    fscanf(pf,"%c",&lectura);
                     }
 }
-             }
-
-        }
-
-    }
-
-}
+             
     // Se ha terminado de leer, luego se cierra el archivo
     fclose(pf);
 }
@@ -405,6 +396,14 @@ float moda2(int m, tipos *energias)
     return moda2;
 }
 	
-
+void guardar_fecha_tipos(fecha *fech,tipos *energias){
+	int m,n;
+	  	for(m=0;m<18;m++){
+  		  	for(n=0;n<24;n++){
+  		energias[m].f[n].month=fech[n].month;
+  			energias[m].f[n].year=fech[n].year;
+	  }
+}
+}
 
 

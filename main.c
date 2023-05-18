@@ -5,7 +5,8 @@
 #define N 23
 int main()
 {
-	tipos *energias,*ener;
+	tipos *energias;
+	fecha *fech;
 	char x;
 	int num;
 	int tipo;
@@ -24,14 +25,16 @@ int main()
 	int r,z,f,p,op,t;
 	float max_total,min_total;
 	float min_year, max_year;
-	int linea_actual;
+	int linea_actual,impresion;
 	char cad[40];
+	int m;
 	// Reserva de memoria dinamica
 	energias = malloc(sizeof(tipos) * N);
-	ener = malloc(sizeof(tipos) * 1);
+	fech = malloc(sizeof(fecha) * 24);
    	// Guardado de datos del fichero a las siguientes funciones
   	guardar_datos_generacion_energias(energias);
-  	guardar_datos_generacion_fechas(energias);
+  	guardar_datos_generacion_fechas(fech);
+    guardar_fecha_tipos(fech,energias);
   do{
 	printf("Introduzca el numero de la operacion que desea realizar:\n");
 	  menu(); //carga del menu
@@ -182,7 +185,25 @@ int main()
 				}
 				break;
 			case 7:
-				printf("%d/%d\n",energias[3].f[0].month,energias[3].f[0].year);
+				imprimir_datos_fichero();
+				scanf("%d",&impresion);
+				switch(impresion){
+					case 1:
+						printf("Seleccione el año");
+						for(n=0;n<18;n++){
+							for(m=0;m<1;m++){
+								printf("%d/%d",energias[n].f[m].month,energias[n].f[m].year);
+									printf("%s %f",energias[n].tipo_energia,energias[n].cant_generada[m]);
+									printf("\n");
+							}
+						}
+						break;
+						case 2:
+							break;
+							case 3:
+								break;
+				}
+				printf("%d/%d\n",energias[3].f[1].month,energias[3].f[1].year);
 				break;
 			default:
 			printf("Error\n");
@@ -191,7 +212,7 @@ int main()
 	}while(cerrar()!=1);
 		printf("Hasta pronto\n");
 	        free(energias);
-	   free(ener);
+	   free(fech);
 	  return 0;	
 	}
 
