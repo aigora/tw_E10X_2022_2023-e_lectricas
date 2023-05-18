@@ -16,7 +16,8 @@ int main()
 	float desviacion_tipica_global;
 	int nLineas=0,pos;
 	int numero;
-	int num_calculos_estadisticos;
+	int num_calculos_estadisticos,num_calculos_estadisticos_mensuales;
+	float med_tipo_energia;
 	int calculos_estadisticos_energia_especifica;
 	int r,z,f,p,op,t;
 	float max_total,min_total;
@@ -67,26 +68,23 @@ int main()
 			   	    printf("Pulsa el tipo de energia que desee \n");
 	        	    menu_calculos_estadisticos_energia_especifica();
 	        	    scanf("%d",&calculos_estadisticos_energia_especifica);
-	        	    switch(tipo)
-	        	    {
-	        		   case '1':
-					   printf("Seleccione el calculo estadistico a realizar:\n");
-					   menu_calculos_estadisticos();
-					   scanf("%d",&num_calculos_estadisticos);
-					   switch(num_calculos_estadisticos)
+	        	    	system("cls");
+					printf("Seleccione el calculo estadistico a realizar:\n");
+					menu_calculos_estadisticos_mensuales();
+					   scanf("%d",&num_calculos_estadisticos_mensuales);
+					   switch(num_calculos_estadisticos_mensuales)
 					   {
-					   	
+					   	case 1:
+					   		med_tipo_energia=media2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
+					   		 printf("%f\n",med_tipo_energia);
+					   		break;
+					   		case 2:
+					   			break;
+					   			case 3:
+					   				break;
 					   	
 					   }
-					  
-					   
 				    }
-	        	    
-						break;
-			}
-		
-						
-			
 				break;
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");

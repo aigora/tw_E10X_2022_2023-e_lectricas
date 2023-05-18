@@ -8,8 +8,11 @@ void menu(){
 }
 
 void menu_calculos_estadisticos() {
-	printf("1 - Mediana global\n2 - Media global\nOpcion seleccionada: ");
+	printf("1 - Mediana global\n2 - Media global\n Opcion seleccionada: ");
 }
+	void menu_calculos_estadisticos_mensuales(){
+		printf("1.Media menusla\n");
+	}
 void menu_maximos_y_minimos(){
 	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
 }
@@ -327,4 +330,18 @@ int cerrar(){
 		system("cls");
 	}
 return p;
+}
+float media2(int m,tipos *energias)//funcion para calculo anual y mensual
+{
+	int i;
+	float med=0;
+	for(i=0;i<24;i++){
+		med+=energias[m].cant_generada[i];
+	}
+	med=med/24;
+	return med;
+}
+float mediana2(int m,tipos *energias)//funcion calculo anual y mensual
+{
+	
 }
