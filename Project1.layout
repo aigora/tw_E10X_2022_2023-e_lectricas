@@ -1,22 +1,22 @@
 [Editors]
 <<<<<<< HEAD
-Order=0,1
-Focused=1
+Order=0,1,2
+Focused=0
 [Editor_0]
 <<<<<<< HEAD
-CursorCol=1
-CursorRow=84
-TopLine=77
+CursorCol=3
+CursorRow=81
+TopLine=25
 LeftChar=1
 [Editor_1]
-CursorCol=3
-CursorRow=18
+CursorCol=9
+CursorRow=7
 TopLine=1
 LeftChar=1
 [Editor_2]
-CursorCol=46
-CursorRow=208
-TopLine=206
+CursorCol=54
+CursorRow=19
+TopLine=13
 =======
 CursorCol=22
 CursorRow=115
@@ -25,6 +25,7 @@ TopLine=13
 <<<<<<< Updated upstream
 Order=2,1,0
 Focused=2
+LeftChar=1
 [Editor_0]
 CursorCol=4
 CursorRow=66

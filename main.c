@@ -35,7 +35,7 @@ int main()
 		scanf("%d",&numero);
 		switch(numero){
 			case 1:
-				printf("Seleccione si desea realizar los calculos estadisticos\n1.Global\n2.De un tipo de energia especifica\n");
+				printf("Seleccione si desea realizar los calculos estadisticos\n1.Globales\n2.De un tipo de energia especifica\n");
 				scanf("%d",&num);
 				if(num==1)
 				{
@@ -64,7 +64,7 @@ int main()
 			}
 			   else if(num==2)
 			   {
-			   	    printf("Pulsa el numero del tipo de energia que desee \n");
+			   	    printf("Pulsa el tipo de energia que desee \n");
 	        	    menu_calculos_estadisticos_energia_especifica();
 	        	    scanf("%d",&calculos_estadisticos_energia_especifica);
 	        	    switch(tipo);
@@ -73,6 +73,8 @@ int main()
 					   printf("Seleccione el calculo estadistico a realizar:\n");
 					   menu_calculos_estadisticos();
 					   scanf("%d",&num_calculos_estadisticos);
+					   switch(num_calculos_estadisticos);
+					  
 					   
 				    }
 	        	    
