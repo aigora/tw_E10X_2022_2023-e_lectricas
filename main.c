@@ -67,13 +67,17 @@ int main()
 			   	    printf("Pulsa el tipo de energia que desee \n");
 	        	    menu_calculos_estadisticos_energia_especifica();
 	        	    scanf("%d",&calculos_estadisticos_energia_especifica);
-	        	    switch(tipo);
+	        	    switch(tipo)
 	        	    {
 	        		   case '1':
 					   printf("Seleccione el calculo estadistico a realizar:\n");
 					   menu_calculos_estadisticos();
 					   scanf("%d",&num_calculos_estadisticos);
-					   switch(num_calculos_estadisticos);
+					   switch(num_calculos_estadisticos)
+					   {
+					   	
+					   	
+					   }
 					  
 					   
 				    }
@@ -92,23 +96,25 @@ int main()
                 // Aumentar el tamaño del arreglo dinámico para contener los nuevos datos
                 energias = realloc(energias, sizeof(tipos) * (N + tam));
                 int i;
-
-                for (i = N; i < N + tam; i++) 
+                int j;
+                int n=23;
+                for (i = n; i < n + tam; i++) 
 				{
                     printf("Datos para el nuevo registro %d:\n", i + 1);
 
                     // Solicitar los datos al usuario
                     printf("Ingrese el tipo de energía: ");
-                    scanf("%d", &energias[i].tipo_energia);
+                    scanf("%s", &energias[i].tipo_energia);
 
                     printf("Ingrese la fecha (formato: mes año): ");
-                    scanf("%d %d", &energias[i].f.month, &energias[i].f.year);
+                    scanf("%d %d", &energias[i].f[0].month, &energias[i].f[0].year);
 
                     printf("Ingrese la cantidad generada: ");
-                    scanf("%f", &energias[i].cant_generada);
+                    for(j=0;j<24;j++){
+                    	     scanf("%f", &energias[i].cant_generada[j]);
+					}
                 }
-
-                N = N + tam; // Actualizo el tamaño total del arreglo.
+                n = n + tam; // Actualizo el tamaño total del arreglo.
                 printf("Los nuevos datos se han agregado correctamente.\n");
                 break;
 			case 3:
@@ -170,12 +176,8 @@ int main()
 	                   break;
 				}
 				break;
-	        case 7:
-	        	
-		
-			//break;
-			case 8:
-				printf("%d/%d\n",energias[3].f[20].month,energias[3].f[20].year);
+			case 7:
+				printf("%d/%d\n",energias[3].f[0].month,energias[3].f[0].year);
 				break;
 			default:
 			printf("Error\n");

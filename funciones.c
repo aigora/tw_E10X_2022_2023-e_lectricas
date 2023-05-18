@@ -4,7 +4,7 @@
 #include <string.h>
 #define N 24
 void menu(){
-		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.\n8.Mostrar datos archivo\n");
+		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Mostrar datos archivo\n");
 }
 
 void menu_calculos_estadisticos() {
@@ -61,12 +61,12 @@ while ( linea_actual <= 23) {
     fclose(pf);	
 }
 void guardar_datos_generacion_fechas(tipos *datos){
-	 FILE *pf;
-	 int i = 0,j;
-	 int pos;
-	 char lectura;
-	 char titulo[25];
-	 int linea_actual = 0;
+     FILE *pf;
+     int i = 0,j;
+     int pos;
+     char lectura;
+     char titulo[25];
+     int linea_actual = 0;
   // Abrir el archivo de lectura
    pf = fopen("generacion_por_tecnologias.txt", "r");
 
@@ -76,28 +76,28 @@ void guardar_datos_generacion_fechas(tipos *datos){
   }
   else
   {
-  	printf("Se ha abierto correctamente\n");
+      printf("Se ha abierto correctamente\n");
 int linea_actual = 0;
     printf("La posicion actual del puntero es %ld bytes.\n", pos);
     while(fscanf(pf,"%c",&lectura)!=EOF){
-    	if(lectura=='\n'){
-    		linea_actual++;
-    		if(linea_actual==4){
-    		 fseek(pf,220, SEEK_SET);
-    				for(j=0;j<17;j++){
-    			for(i=0;i<24;i++){
-    				fscanf(pf,"%d/%d,",&datos[j].f[i].month,&datos[j].f[i].year);
-					}
-		}
-			 }
-		
-		}
-		
-	}
-    
+        if(lectura=='\n'){
+            linea_actual++;
+            if(linea_actual==4){
+             fseek(pf,220, SEEK_SET);
+                            for(i=0;i<24;i++){
+                                        for(j=0;j<18;j++){
+                    fscanf(pf,"%d/%d,",&datos[j].f[i].month,&datos[j].f[i].year);
+                    }
+}
+             }
+
+        }
+
+    }
+
 }
     // Se ha terminado de leer, luego se cierra el archivo
-    fclose(pf);	
+    fclose(pf);
 }
 
 
