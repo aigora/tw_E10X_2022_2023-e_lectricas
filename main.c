@@ -7,6 +7,7 @@ int main()
 {
 	tipos *energias,*ener;
 	char x;
+	int num;
 	int tipo;
 	int tam;
 	float mediana_global;
@@ -16,6 +17,7 @@ int main()
 	int nLineas=0,pos;
 	int numero;
 	int num_calculos_estadisticos;
+	int calculos_estadisticos_energia_especifica;
 	int r,z,f,p,op,t;
 	float max_total,min_total;
 	float min_year, max_year;
@@ -33,10 +35,14 @@ int main()
 		scanf("%d",&numero);
 		switch(numero){
 			case 1:
-			printf("Seleccione el calculo estadistico a realizar:\n");
-				menu_calculos_estadisticos();
-				scanf("%d",&num_calculos_estadisticos);
-				switch(num_calculos_estadisticos){
+				printf("Seleccione si desea realizar los calculos estadisticos\n1.Global\n2.De un tipo de energia especifica\n");
+				scanf("%d",&num);
+				if(num==1)
+				{
+					printf("Seleccione el calculo estadistico a realizar:\n");
+					menu_calculos_estadisticos();
+					scanf("%d",&num_calculos_estadisticos);
+					switch(num_calculos_estadisticos){
 					case 1:
 						mediana_global=mediana(energias);
 						printf("La mediana de todos los datos es: %f\n", mediana_global);
@@ -53,8 +59,28 @@ int main()
 						//desviacion_tipica_global = desviacion_tipica(energias)
 						printf("La desviacion tipica de todos los datos es: %f\n",desviacion_tipica_global);
 						break;
-						
+					
 				}
+			}
+			   else if(num==2)
+			   {
+			   	    printf("Pulsa el numero del tipo de energia que desee \n");
+	        	    menu_calculos_estadisticos_energia_especifica();
+	        	    scanf("%d",&calculos_estadisticos_energia_especifica);
+	        	    switch(tipo);
+	        	    {
+	        		   case '1':
+					   printf("Seleccione el calculo estadistico a realizar:\n");
+					   menu_calculos_estadisticos();
+					   scanf("%d",&num_calculos_estadisticos);
+					   
+				    }
+	        	    
+						break;
+			}
+		
+						
+			
 				break;
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
@@ -119,12 +145,8 @@ int main()
 				}
 				break;
 	        case 7:
-	        	//switch(tipo);
-	        	//{
-	        	//	printf("Pulsa el numero del tipo de energia que desee \n");
-	        	//	printf("1- Eolica\n 2-Turbinacion bombeo \n");
-			//	}
-		//}
+	        	
+		
 			//break;
 			case 8:
 				printf("%d/%d\n",energias[3].f[20].month,energias[3].f[20].year);

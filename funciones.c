@@ -16,6 +16,11 @@ void menu_maximos_y_minimos(){
 void ordenar(){
 	printf("1.Ordenación de mayor a menor\n 2.Ordenación de menor a mayor\n");
 }
+void menu_calculos_estadisticos_energia_especifica(){
+	printf(" 1-Hidraúlica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diésel\n 6-Turbina de gas\n 7-Turbina de motor");
+	printf(" 8-Ciclo combinado \n 9-Hidroeolica\n 10-Eolica\n 11-Solar fotovoltaica\n 12-Solar termica\n 13-Otros renovables\n 14-Congeneracion");
+	printf(" 15-Residuos no renovables \n 16-Residuos renovables\n 17-Generacion total\n ");
+}
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
 	 int pos;
