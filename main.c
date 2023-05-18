@@ -86,7 +86,31 @@ int main()
 				break;
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
-				break;
+                printf("Introduzca el número de datos que desea agregar: ");
+                scanf("%d", &tam);
+
+                // Aumentar el tamaño del arreglo dinámico para contener los nuevos datos
+                energias = realloc(energias, sizeof(tipos) * (N + tam));
+                int i;
+
+                for (i = N; i < N + tam; i++) 
+				{
+                    printf("Datos para el nuevo registro %d:\n", i + 1);
+
+                    // Solicitar los datos al usuario
+                    printf("Ingrese el tipo de energía: ");
+                    scanf("%d", &energias[i].tipo_energia);
+
+                    printf("Ingrese la fecha (formato: mes año): ");
+                    scanf("%d %d", &energias[i].f.month, &energias[i].f.year);
+
+                    printf("Ingrese la cantidad generada: ");
+                    scanf("%f", &energias[i].cant_generada);
+                }
+
+                N = N + tam; // Actualizo el tamaño total del arreglo.
+                printf("Los nuevos datos se han agregado correctamente.\n");
+                break;
 			case 3:
 				printf("GUARDAR RESULTADOS\n");
 				break;
@@ -135,12 +159,12 @@ int main()
 						max_year=valor_maximo(0,z,17,f,energias);
 						break;
 				    case 4:
-						printf("Introduzca el periodo del cuall quiere ver el minimo de los meses entre(1-24)\n");
+						printf("Introduzca el periodo del cual quiere ver el minimo de los meses entre(1-24)\n");
 	                    scanf("%d %d",&z,&f);
 					    min_year=valor_minimo(0,z,17,f,energias);
 						break;	
 					case 5:
-					   printf("Minimo y mÃ¡ximo totales\n");
+					   printf("Minimo y maximo totales\n");
 			  min_total=valor_minimo(0,0,17,24,energias);	
 	                   max_total=valor_maximo(0,0,17,24,energias);
 	                   break;

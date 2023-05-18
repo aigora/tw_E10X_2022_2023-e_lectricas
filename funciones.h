@@ -22,3 +22,5 @@ float valor_maximo(int filas,int columnas,int filas2,int columnas2,tipos *energi
 float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energias);
 void ordenacion_maximo(int filas,tipos *energias); 
 void ordenacion_minimo(int filas,tipos *energias);
+void guardar_datos_generacion_energias(tipos* energias);
+
