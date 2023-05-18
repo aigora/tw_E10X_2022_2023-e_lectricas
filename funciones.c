@@ -11,7 +11,7 @@ void menu_calculos_estadisticos() {
 	printf("1 - Mediana global\n2 - Media global\n Opcion seleccionada: ");
 }
 	void menu_calculos_estadisticos_mensuales(){
-		printf("1.Media mensual\n2.Mediana mensual\n");
+		printf("1.Media mensual\n2.Mediana mensual\n3.Moda\nOpcion seleccionada:");
 	}
 void menu_maximos_y_minimos(){
 	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
@@ -379,4 +379,32 @@ float mediana2(int m, tipos *energias)
 
     return mediana2;
 }
+float moda2(int m, tipos *energias)
+{
+	int i, j;
+
+    int moda2 = 0; // Valor inicial para la moda
+    int maxFrecuencia = 0; // Valor inicial para la frecuencia máxima
+
+    for (i = 0; i < 24; i++) {
+        int frecuencia = 0; 
+
+        for (j = 0; j < 24; j++) {
+            if (energias[m].cant_generada[i] == energias[m].cant_generada[j]) {
+                frecuencia++; // Incrementar la frecuencia
+            }
+        }
+
+        if (frecuencia > maxFrecuencia) 
+		{
+            maxFrecuencia = frecuencia; // Actualizar la frecuencia máxima
+            moda2 = energias[m].cant_generada[i]; // Actualizar la moda
+        }
+    }
+
+    return moda2;
+}
+	
+
+
 
