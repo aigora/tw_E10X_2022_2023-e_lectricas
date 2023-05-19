@@ -20,6 +20,7 @@ int main()
 	float med_tipo_energia;
 	float mediana2_tipo_energia;
 	float moda2_tipo_energia;
+	float varianza2_tipo_energia;
 	int calculos_estadisticos_energia_especifica;
 	int r,z,f,p,op,t;
 	float max_total,min_total;
@@ -87,6 +88,10 @@ int main()
 					   	case 3:
 					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",moda2_tipo_energia);
+					   		break;
+					   	case 4:
+					   		varianza2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
+					   		printf("%f\n",varianza2_tipo_energia);
 					   		break;
 					   	
 					   }

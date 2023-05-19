@@ -11,7 +11,7 @@ void menu_calculos_estadisticos() {
 	printf("1 - Mediana global\n2 - Media global\n Opcion seleccionada: ");
 }
 	void menu_calculos_estadisticos_mensuales(){
-		printf("1.Media mensual\n2.Mediana mensual\n3.Moda\nOpcion seleccionada:");
+		printf("1.Media mensual\n2.Mediana mensual\n3.Moda mensual\n4.Varianza mensual\nOpcion seleccionada:");
 	}
 void menu_maximos_y_minimos(){
 	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
@@ -404,7 +404,31 @@ float moda2(int m, tipos *energias)//funcion para calculo anual y mensual
 
     return moda2;
 }
-	
+float varianza(int m, tipos *energias) 
+{
+    int i;
+    int n = 24;
+    float media = 0;
+    float suma = 0;
+
+    // Calcula la media de los datos
+    for (i = 0; i < n; i++) {
+        media += energias[m].cant_generada[i];
+    }
+    media =media/ n;
+
+    // Calcula la suma de las diferencias al cuadrado
+    for (i = 0; i < n; i++) {
+        float diferencia = energias[m].cant_generada[i] - media;
+        suma += diferencia * diferencia;
+    }
+
+    // Calcula la varianza dividiendo la suma entre el número de datos
+    float varianza2 = suma / n;
+
+    return varianza2;
+}
+
 
 
 
