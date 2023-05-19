@@ -4,19 +4,29 @@
 #include <string.h>
 #define N 24
 void menu(){
-		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n");
+		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Mostrar datos archivo\n");
 }
 
 void menu_calculos_estadisticos() {
-	printf("1 - Mediana global\n2 - Media global\nOpcion seleccionada: ");
+	printf("1 - Mediana global\n2 - Media global\n Opcion seleccionada: ");
 }
+	void menu_calculos_estadisticos_mensuales(){
+		printf("1.Media mensual\n2.Mediana mensual\n3.Moda\nOpcion seleccionada:");
+	}
 void menu_maximos_y_minimos(){
 	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
 }
 void ordenar(){
 	printf("1.Ordenación de mayor a menor\n 2.Ordenación de menor a mayor\n");
 }
-
+void menu_calculos_estadisticos_energia_especifica(){
+	printf(" 1-Hidraulica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diésel\n 6-Turbina de gas\n 7-Turbina de motor\n");
+	printf(" 8-Ciclo combinado \n 9-Hidroeolica\n 10-Eolica\n 11-Solar fotovoltaica\n 12-Solar termica\n 13-Otros renovables\n 14-Congeneracion\n");
+	printf(" 15-Residuos no renovables \n 16-Residuos renovables\n 17-Generacion total\n ");
+}
+void imprimir_datos_fichero(){
+	printf("1.Imprimir todos los datos ordenados en meses\n 2.Imprimir los datos de un mes\n 3. Imprimir los datos de una energia");
+}
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
 	 int pos;
@@ -57,12 +67,12 @@ while ( linea_actual <= 23) {
     fclose(pf);	
 }
 void guardar_datos_generacion_fechas(fecha *f){
-	 FILE *pf;
-	 int i = 0;
-	 int pos;
-	 char titulo[25];
+     FILE *pf;
+     int i = 0,j;
+     int pos;
+     char lectura;
   // Abrir el archivo de lectura
-   pf = fopen("generacion_por_tecnologias.txt", "r");
+   pf = fopen("generacion_por_tecnologias_21_22_puntos_simplificado.csv", "r");
 
   if (pf == NULL)
   {
@@ -70,24 +80,18 @@ void guardar_datos_generacion_fechas(fecha *f){
   }
   else
   {
-  	  fseek(pf, 0, SEEK_SET);
-  	printf("Se ha abierto correctamente\n");
-int linea_actual = 0;
- pos = ftell(pf);
-    fseek(pf, 250, SEEK_SET);
- pos = ftell(pf);
-    printf("La posicion actual del puntero es %ld bytes.\n", pos);
-    while ( linea_actual ==5) {
-	fscanf(pf,"%s %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d %d/%d",titulo,&f[0].month,&f[0].year,&f[1].month,&f[1].year,&f[2].month,&f[2].year,&f[3].month,&f[3].year,
-	&f[4].month,&f[4].year,&f[5].month,&f[5].year,&f[6].month,&f[6].year,&f[7].month,&f[7].year,&f[8].month,&f[8].year,
-	&f[9].month,&f[9].year,&f[10].month,&f[10].year,&f[11].month,&f[11].year,&f[12].month,&f[12].year,&f[13].month,&f[13].year,
-	&f[14].month,&f[14].year,&f[15].month,&f[15].year,&f[16].month,&f[16].year,&f[17].month,&f[17].year,&f[18].month,&f[19].year,
-	&f[20].month,&f[20].year,&f[21].month,&f[21].year,&f[22].month,&f[22].year,&f[23].month,&f[23].year);
-	linea_actual++;
+      printf("Se ha abierto correctamente\n");
+             fseek(pf,220, SEEK_SET);
+             pos=tell(pf);
+                 printf("La posicion actual del puntero es %ld bytes.\n", pos);
+                for(i=0;i<24;i++){
+                    fscanf(pf,"%d-%d",&f[i].month,&f[i].year);
+                    fscanf(pf,"%c",&lectura);
+                    }
 }
-}
+             
     // Se ha terminado de leer, luego se cierra el archivo
-    fclose(pf);	
+    fclose(pf);
 }
 
 
@@ -342,3 +346,88 @@ int cerrar(){
 	}
 return p;
 }
+float media2(int m,tipos *energias)//funcion para calculo anual y mensual
+{
+	int i;
+	float med=0;
+	for(i=0;i<24;i++){
+		med+=energias[m].cant_generada[i];
+	}
+	med=med/24;
+	return med;
+}
+float mediana2(int m, tipos *energias)
+{
+    int i, j;
+    int n = 24; // Número de elementos en el arreglo
+
+    float valores[n];
+    for (i = 0; i < n; i++) {
+        valores[i] = energias[m].cant_generada[i];
+    }
+
+    // Ordenamos los datos de forma ascendente 
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) 
+		{
+            if (valores[j] > valores[j + 1]) 
+			{
+                float temp = valores[j];
+                valores[j] = valores[j + 1];
+                valores[j + 1] = temp;
+            }
+        }
+    }
+
+
+    float mediana2;
+    if (n % 2 == 0) 
+	{
+        // Si hay un número par de elementos, la mediana sera el promedio de los dos valores centrales
+        mediana2 = (valores[n / 2 - 1] + valores[n / 2]) / 2.0;
+    } 
+	else 
+	{
+        // Si hay un número impar de elementos, tomamos el valor del medio
+        mediana2 = valores[n / 2];
+    }
+
+    return mediana2;
+}
+float moda2(int m, tipos *energias)
+{
+	int i, j;
+
+    int moda2 = 0; // Valor inicial para la moda
+    int maxFrecuencia = 0; // Valor inicial para la frecuencia máxima
+
+    for (i = 0; i < 24; i++) {
+        int frecuencia = 0; 
+
+        for (j = 0; j < 24; j++) {
+            if (energias[m].cant_generada[i] == energias[m].cant_generada[j]) {
+                frecuencia++; // Incrementar la frecuencia
+            }
+        }
+
+        if (frecuencia > maxFrecuencia) 
+		{
+            maxFrecuencia = frecuencia; // Actualizar la frecuencia máxima
+            moda2 = energias[m].cant_generada[i]; // Actualizar la moda
+        }
+    }
+
+    return moda2;
+}
+	
+void guardar_fecha_tipos(fecha *fech,tipos *energias){
+	int m,n;
+	  	for(m=0;m<18;m++){
+  		  	for(n=0;n<24;n++){
+  		energias[m].f[n].month=fech[n].month;
+  			energias[m].f[n].year=fech[n].year;
+	  }
+}
+}
+
+

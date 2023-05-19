@@ -1,5 +1,6 @@
 [Editors]
 <<<<<<< HEAD
+<<<<<<< HEAD
 Order=0,1
 Focused=2
 [Editor_0]
@@ -11,12 +12,25 @@ LeftChar=1
 [Editor_1]
 CursorCol=52
 CursorRow=22
+=======
+Order=2,1,0
+Focused=0
+[Editor_0]
+<<<<<<< HEAD
+CursorCol=13
+CursorRow=197
+TopLine=178
+LeftChar=1
+[Editor_1]
+CursorCol=1
+CursorRow=29
+>>>>>>> 13a493dd793e003363d5e2f6b1b03144ff4235ea
 TopLine=1
 LeftChar=1
 [Editor_2]
-CursorCol=46
-CursorRow=208
-TopLine=206
+CursorCol=1
+CursorRow=27
+TopLine=1
 =======
 CursorCol=22
 CursorRow=115
@@ -25,6 +39,7 @@ TopLine=13
 <<<<<<< Updated upstream
 Order=2,1,0
 Focused=2
+LeftChar=1
 [Editor_0]
 CursorCol=4
 CursorRow=66
