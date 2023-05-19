@@ -1,16 +1,16 @@
 [Editors]
 <<<<<<< HEAD
 Order=0,1
-Focused=1
+Focused=2
 [Editor_0]
 <<<<<<< HEAD
-CursorCol=1
-CursorRow=84
-TopLine=77
+CursorCol=46
+CursorRow=136
+TopLine=41
 LeftChar=1
 [Editor_1]
-CursorCol=3
-CursorRow=18
+CursorCol=52
+CursorRow=22
 TopLine=1
 LeftChar=1
 [Editor_2]

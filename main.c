@@ -89,7 +89,7 @@ int main()
 	        case 6:   	
 	        printf("Maximos y minimos");
 
-	        printf("Introduzca 1 quiere ver un valor maximo o minimo menusal y 2 si lo quiere ver en un periodo");
+	        printf("Introduzca 1 quiere ver un valor maximo o minimo mensual y 2 si lo quiere ver en un periodo");
 	        scanf("%d",&r);
 	        if(r==1){
 	        printf("Introduzca el mes del cual quiere ver el maximo\n");
@@ -133,7 +133,7 @@ int main()
 						max_year=valor_maximo(0,z,17,f,energias);
 						break;
 				    case 4:
-						printf("Introduzca el periodo del cuall quiere ver el minimo de los meses entre(1-24)\n");
+						printf("Introduzca el periodo del cual quiere ver el minimo de los meses entre(1-24)\n");
 	                    scanf("%d %d",&z,&f);
 					    min_year=valor_minimo(0,z,17,f,energias);
 						break;	
