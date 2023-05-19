@@ -95,7 +95,6 @@ int main()
 					   	
 					   }
 				    }
-				}
 				break;
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
@@ -190,7 +189,7 @@ int main()
 				scanf("%d",&impresion);
 				switch(impresion){
 					case 1:
-						printf("Seleccione el año");
+						printf("Seleccion year\n");
 						for(n=0;n<18;n++){
 							for(m=0;m<1;m++){
 								printf("%d/%d",energias[n].f[m].month,energias[n].f[m].year);

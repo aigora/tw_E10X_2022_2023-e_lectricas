@@ -6,6 +6,7 @@ typedef struct{
 typedef struct {
     char tipo_energia[50];
    float cant_generada[24];
+   fecha f[24];
 } tipos;
 void menu();
 void menu_calculos_estadisticos();

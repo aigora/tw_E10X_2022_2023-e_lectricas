@@ -4,7 +4,7 @@
 #include <string.h>
 #define N 24
 void menu(){
-		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n");
+		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Imprimir valores\n");
 }
 
 void menu_calculos_estadisticos() {
@@ -165,17 +165,18 @@ float  media(tipos*energias)
     return media;
 }
 
-float varianza(tipos *energias)
+/*float varianza(tipos *energias)
 {
     float* vector = NULL;
     int n = 0;
+    int i ,j,k;
     float varianza = 0.0;
-    float media = media(*energias);
+   float med=media(energias);
 
     // Agregar elementos al vector
-    for (int i = 0; i < 17; i++)
+    for (i = 0; i < 17; i++)
 	 {
-        for (int j = 0; j < 24; j++)
+        for (j = 0; j < 24; j++)
 		 {
             float elem = energias[i].cant_generada[j];
             vector = (float*)realloc(vector, sizeof(float) * (n + 1));
@@ -185,8 +186,8 @@ float varianza(tipos *energias)
     }
 
     // Calcula la suma de los cuadrados de las diferencias respecto a la media
-    for (int i = 0; i < n; i++) {
-        varianza = varianza + pow(vector[i] - media, 2);
+    for (k = 0; k < n; k++) {
+        varianza = varianza + pow(vector[k] - media, 2);
     }
 
     // Calcula la varianza
@@ -201,7 +202,7 @@ float desviacion_tipica(tipos *energias)
 {
 	
 	float varianza;
-	varianza = varianza(tipos*energias);
+	varianza = varianza(energias);
 	float desviacion_tipica;
 	desviacion_tipica = sqrt(varianza);
 	
@@ -211,7 +212,7 @@ float desviacion_tipica(tipos *energias)
 	
 	//hacer la raiz cuadrada de la varianza
 }
-
+*/
 void ordenar_vector(float vector[], int n){
 	int i, j , min_index;
 	for (i=0; i<n-1;i++){
