@@ -5,16 +5,18 @@ Order=0,1
 Focused=2
 [Editor_0]
 <<<<<<< HEAD
-CursorCol=46
-CursorRow=136
-TopLine=41
+CursorCol=62
+CursorRow=54
+TopLine=35
 LeftChar=1
 [Editor_1]
-CursorCol=52
-CursorRow=22
+CursorCol=1
+CursorRow=19
 =======
 Order=2,1,0
 Focused=0
+TopLine=2
+LeftChar=1
 [Editor_0]
 <<<<<<< HEAD
 CursorCol=13
