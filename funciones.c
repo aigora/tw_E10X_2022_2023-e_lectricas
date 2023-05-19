@@ -212,17 +212,6 @@ float desviacion_tipica(tipos *energias)
 	//hacer la raiz cuadrada de la varianza
 }
 
-
-	
-	
-
-
-
-
-
-
-
-
 void ordenar_vector(float vector[], int n){
 	int i, j , min_index;
 	for (i=0; i<n-1;i++){
