@@ -93,9 +93,17 @@ int main()
 					   		varianza2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",varianza2_tipo_energia);
 					   		break;
+					   	default:
+					   		printf("Error\n");
+					   		break;
+					   	
 					   	
 					   }
 				    }
+				    else
+					{
+						printf("Error\n");
+					}
 				break;
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
@@ -183,6 +191,9 @@ int main()
 			  min_total=valor_minimo(0,0,17,24,energias);	
 	                   max_total=valor_maximo(0,0,17,24,energias);
 	                   break;
+	                default:
+	                	printf("Error\n");
+	                	break;
 				}
 				break;
 			case 7:

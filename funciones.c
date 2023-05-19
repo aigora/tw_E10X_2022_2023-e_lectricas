@@ -11,10 +11,10 @@ void menu_calculos_estadisticos() {
 	printf("1 - Mediana global\n2 - Media global\n Opcion seleccionada: ");
 }
 	void menu_calculos_estadisticos_mensuales(){
-		printf("1.Media mensual\n2.Mediana mensual\n3.Moda mensual\n4.Varianza mensual\nOpcion seleccionada:");
+		printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n Opcion seleccionada:");
 	}
 void menu_maximos_y_minimos(){
-	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
+	printf(" 1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n 5.Minimo y maximo totales\n");
 }
 void ordenar(){
 	printf("1.Ordenación de mayor a menor\n 2.Ordenación de menor a mayor\n");
