@@ -21,6 +21,7 @@ int main()
 	float mediana2_tipo_energia;
 	float moda2_tipo_energia;
 	float varianza2_tipo_energia;
+	float desviacion_tipica_2_tipo_energia;
 	int calculos_estadisticos_energia_especifica;
 	int r,z,f,p,op,t;
 	float max_total,min_total;
@@ -92,6 +93,10 @@ int main()
 					   	case 4:
 					   		varianza2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",varianza2_tipo_energia);
+					   		break;
+					   	case 5:
+					   	    desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
+					   		printf("%f\n",desviacion_tipica_2_tipo_energia);
 					   		break;
 					   	default:
 					   		printf("Error\n");
