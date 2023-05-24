@@ -103,18 +103,18 @@ float mediana(tipos *energias){
     for (i = 0; i < 17; i++) {
 		for (j = 0; j < 24; j++) {
         	float elem = energias[i].cant_generada[j];
-        	vector = (int*) realloc(vector, sizeof(int) * (n+1));
+        vector = (int*) realloc(vector, sizeof(int) * (n+1));
         	vector[n] = elem;
         	n++;
         }
 	}
-	
+
 	// Ordenar vector
 	ordenar_vector(vector, n);
-	
+
 	// Calcular posicion de la mediana en la lista ordenada
 	int posicion_mediana = n/2;
-	
+
 	if(n%2 == 0) {
 		// Si la lista tiene un tamaño par, la mediana sera el promedio de los dos valores centrales
 		return (vector[posicion_mediana-1] + vector[posicion_mediana])/2.0;
@@ -122,94 +122,8 @@ float mediana(tipos *energias){
 		// Si la lista tiene un tamaño impar, la mediana sera el valor en la posicion central
 		return vector[posicion_mediana];
 	}
-	
+
 }
-//calcular la media 
-
-
-float  media(tipos*energias)
-{
-	// Crear el vector inicial vacio
-	float* vector = NULL;
-	int n = 0;
-
-	// Agregar elementos
-	int i;
-    int j;
-    for (i = 0; i < 17; i++) 
-	{
-		for (j = 0; j < 24; j++) {
-        	float elem = energias[i].cant_generada[j];
-        	vector = (int*) realloc(vector, sizeof(int) * (n+1));
-        	vector[n] = elem;
-        	n++;
-        }
-	}
-
-    
-    // Calcular la suma de los elementos
-    float suma = 0;
-    for (i = 0; i < n; i++) 
-	{
-        suma =  vector[i] +1 ;
-    }
-    
-    // Calcular la media
-    float media = suma / n;
-    
-    // Devolver el resultado de la media
-    return media;
-}
-
-float varianza(tipos *energias)
-{
-    float* vector = NULL;
-    int n = 0;
-    float varianza = 0.0;
-    float media = media(*energias);
-
-    // Agregar elementos al vector
-    for (int i = 0; i < 17; i++)
-	 {
-        for (int j = 0; j < 24; j++)
-		 {
-            float elem = energias[i].cant_generada[j];
-            vector = (float*)realloc(vector, sizeof(float) * (n + 1));
-            vector[n] = elem;
-            n++;
-        }
-    }
-
-    // Calcula la suma de los cuadrados de las diferencias respecto a la media
-    for (int i = 0; i < n; i++) {
-        varianza = varianza + pow(vector[i] - media, 2);
-    }
-
-    // Calcula la varianza
-    varianza =varianza/ (n - 1);
-
-    // Devolver el resultado de la varianza
-    return varianza;
-}
-
-
-float desviacion_tipica(tipos *energias)
-{
-	
-	float varianza;
-	varianza = varianza(tipos*energias);
-	float desviacion_tipica;
-	desviacion_tipica = sqrt(varianza);
-	
-	
-	return desviacion_tipica;
-	
-	
-	//hacer la raiz cuadrada de la varianza
-}
-
-
-	
 	
 
 
