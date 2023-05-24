@@ -161,7 +161,37 @@ float  media(tipos*energias)
     return media;
 }
 
-	
+float varianza(tipos *energias)
+{
+    float* vector = NULL;
+    int n = 0;
+    float varianza = 0.0;
+    float media = media;
+
+    // Agregar elementos al vector
+    int i,j;
+    for ( i = 0; i < 17; i++)
+	 {
+        for ( j = 0; j < 24; j++)
+		 {
+            float elem = energias[i].cant_generada[j];
+            vector = (float*)realloc(vector, sizeof(float) * (n + 1));
+            vector[n] = elem;
+            n++;
+        }
+    }
+
+    // Calcula la suma de los cuadrados de las diferencias respecto a la media
+    for (i = 0; i < n; i++) {
+        varianza = varianza + pow(vector[i] - media, 2);
+    }
+
+    // Calcula la varianza
+    varianza =varianza/ (n - 1);
+
+    // Devolver el resultado de la varianza
+    return varianza;
+}
 
 
 
