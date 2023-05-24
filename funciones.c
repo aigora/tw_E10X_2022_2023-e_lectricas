@@ -193,6 +193,20 @@ float varianza(tipos *energias)
     return varianza;
 }
 
+float desviacion_tipica(tipos *energias)
+{
+	
+	float varianza;
+	varianza = varianza;
+	float desviacion_tipica;
+	desviacion_tipica = sqrt(varianza);
+	
+	
+	return desviacion_tipica;
+	
+	
+	//hacer la raiz cuadrada de la varianza
+}
 
 
 
