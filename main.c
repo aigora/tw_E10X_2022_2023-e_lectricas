@@ -5,35 +5,36 @@
 #define N 23
 int main()
 {
-	tipos *energias,*ener;
+	tipos *energias;
+	fecha *fech;
 	char x;
 	int num;
 	int tipo;
 	int tam;
 	float mediana_global;
 	float media_global;
-	float varianza_global;
-	float desviacion_tipica_global;
+	float varianza_global,varianza2_tipo_energia;
+	float desviacion_tipica_global,desviacion_tipica_2_tipo_energia;
 	int nLineas=0,pos;
 	int numero;
 	int num_calculos_estadisticos,num_calculos_estadisticos_mensuales;
 	float med_tipo_energia;
 	float mediana2_tipo_energia;
 	float moda2_tipo_energia;
-	float varianza2_tipo_energia;
-	float desviacion_tipica_2_tipo_energia;
 	int calculos_estadisticos_energia_especifica;
 	int r,z,f,p,op,t;
 	float max_total,min_total;
 	float min_year, max_year;
-	int linea_actual;
+	int linea_actual,impresion;
 	char cad[40];
+	int m;
 	// Reserva de memoria dinamica
 	energias = malloc(sizeof(tipos) * N);
-	ener = malloc(sizeof(tipos) * 1);
+	fech = malloc(sizeof(fecha) * 24);
    	// Guardado de datos del fichero a las siguientes funciones
   	guardar_datos_generacion_energias(energias);
-  	guardar_datos_generacion_fechas(energias);
+  	guardar_datos_generacion_fechas(fech);
+    guardar_fecha_tipos(fech,energias);
   do{
 	printf("Introduzca el numero de la operacion que desea realizar:\n");
 	  menu(); //carga del menu
@@ -89,33 +90,25 @@ int main()
 					   	case 3:
 					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",moda2_tipo_energia);
-					   		break;
+					   				
+					   				break;
 					   	case 4:
 					   		varianza2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",varianza2_tipo_energia);
 					   		break;
-					   	case 5:
-					   	    desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
+					   		case 5:
+					   			  desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",desviacion_tipica_2_tipo_energia);
-					   		break;
-					   	default:
-					   		printf("Error\n");
-					   		break;
-					   	
-					   	
+					   			break;
 					   }
 				    }
-				    else
-					{
-						printf("Error\n");
-					}
 				break;
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
-                printf("Introduzca el n�mero de datos que desea agregar: ");
+				printf("Introduzca el nÃºmero de datos que desea agregar: ");
                 scanf("%d", &tam);
 
-                // Aumentar el tama�o del arreglo din�mico para contener los nuevos datos
+                // Aumentar el tamaÃ±o del arreglo dinÃ¡mico para contener los nuevos datos
                 energias = realloc(energias, sizeof(tipos) * (N + tam));
                 int i;
                 int j;
@@ -125,10 +118,10 @@ int main()
                     printf("Datos para el nuevo registro %d:\n", i + 1);
 
                     // Solicitar los datos al usuario
-                    printf("Ingrese el tipo de energ�a: ");
+                    printf("Ingrese el tipo de energÃ­a: ");
                     scanf("%s", &energias[i].tipo_energia);
 
-                    printf("Ingrese la fecha (formato: mes a�o): ");
+                    printf("Ingrese la fecha (formato: mes aÃ±o): ");
                     scanf("%d %d", &energias[i].f[0].month, &energias[i].f[0].year);
 
                     printf("Ingrese la cantidad generada: ");
@@ -136,9 +129,9 @@ int main()
                     	     scanf("%f", &energias[i].cant_generada[j]);
 					}
                 }
-                n = n + tam; // Actualizo el tama�o total del arreglo.
+                n = n + tam; // Actualizo el tamaÃ±o total del arreglo.
                 printf("Los nuevos datos se han agregado correctamente.\n");
-                break;
+				break;
 			case 3:
 				printf("GUARDAR RESULTADOS\n");
 				break;
@@ -153,8 +146,8 @@ int main()
 	         
 			case 5:
 				printf("ORDENACION DE VALORES\n");
-				// InicializaciÃ³n de la variable 'maximo' con el primer valor de 'cant_generada'
-				printf("Introduzca el tipo de energía del cual quiere ver el máximo de (0-17)\n");//por ahora se pone de 0 a 17 y luego imprimo 
+				// InicializaciÃƒÂ³n de la variable 'maximo' con el primer valor de 'cant_generada'
+				printf("Introduzca el tipo de energÃ­a del cual quiere ver el mÃ¡ximo\n");
 				scanf("%d",&p);
 			     ordenar();
 				scanf("%d",&op);
@@ -167,7 +160,7 @@ int main()
 			 
 	        case 6:   	
 	        printf("Maximos y minimos");
-	        printf("Seleccione si quiere calcular un máximo o mínimo:\n");
+	        printf("Seleccione si quiere calcular un mÃƒÂ¡ximo o mÃƒÂ­nimo:\n");
 				menu_maximos_y_minimos();
 				scanf("%d",&r);
 				switch(r){
@@ -196,22 +189,36 @@ int main()
 			  min_total=valor_minimo(0,0,17,24,energias);	
 	                   max_total=valor_maximo(0,0,17,24,energias);
 	                   break;
-	                default:
-	                	printf("Error\n");
-	                	break;
+				}	
+			break;
+				case 7:
+				imprimir_datos_fichero();
+				scanf("%d",&impresion);
+				switch(impresion){
+					case 1:
+						printf("Seleccion year\n");
+						for(n=0;n<18;n++){
+							for(m=0;m<1;m++){
+								printf("%d/%d",energias[n].f[m].month,energias[n].f[m].year);
+									printf("%s %f",energias[n].tipo_energia,energias[n].cant_generada[m]);
+									printf("\n");
+							}
+						}
+						break;
+						case 2:
+							break;
+							case 3:
+								break;
 				}
-				break;
-			case 7:
-				printf("%d/%d\n",energias[3].f[0].month,energias[3].f[0].year);
+				printf("%d/%d\n",energias[3].f[1].month,energias[3].f[1].year);
 				break;
 			default:
-			printf("Error\n");
-			break;
+				printf("Error\n");
+				break;
 		}
 	}while(cerrar()!=1);
 		printf("Hasta pronto\n");
 	        free(energias);
-	   free(ener);
+	   free(fech);
 	  return 0;	
 	}
-
