@@ -197,17 +197,27 @@ int main()
 				switch(impresion){
 					case 1:
 						printf("Seleccion year\n");
-						for(n=0;n<18;n++){
-							for(m=0;m<1;m++){
+						int year;
+						scanf("%d", &year);
+						if (year == 2021 || year == 2022)
+						{
+							for(n=0;n<18;n++){
+							for(m=0;m<12;m++){
 								printf("%d/%d",energias[n].f[m].month,energias[n].f[m].year);
 									printf("%s %f",energias[n].tipo_energia,energias[n].cant_generada[m]);
 									printf("\n");
 							}
 						}
+						}
+						else 
+						{
+							printf("year invalido.\n");
+						}
+						
 						break;
 					case 2:
-							printf("Selecciona un año:\n");
-							int year;
+							printf("Selecciona un year:\n");
+							
 							scanf("%d", &year);
 							if (year == 2021 || year == 2022)
 							{
@@ -216,7 +226,7 @@ int main()
 								scanf("%d", &mes);
 								if (mes >= 1 && mes <= 12)
 								{
-									printf("Datos del año %d, mes %d:\n", year, mes);
+									printf("Datos del year %d, mes %d:\n", year, mes);
 									int n;
 									for (n = 0; n < 18; n++)
 									{
@@ -227,12 +237,12 @@ int main()
 								}
 								else
 								{
-									printf("Mes inválido.\n");
+									printf("Mes invalido.\n");
 								}
 							}
 							else
 							{
-								printf("Año inválido.\n");
+								printf("Year invalido.\n");
 							}
 						    break;
 					case 3:
@@ -265,6 +275,9 @@ int main()
 								printf("Opcion invalida.\n");
 							}
 							break;
+					default:
+						printf("Error");
+						break;
 
 					
 				}
