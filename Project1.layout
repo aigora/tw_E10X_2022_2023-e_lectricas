@@ -2,21 +2,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-Order=
-Focused=2
+Order=0,1,2
+Focused=0
 [Editor_0]
 <<<<<<< HEAD
-CursorCol=24
-CursorRow=101
-TopLine=85
+CursorCol=42
+CursorRow=231
+TopLine=238
 LeftChar=1
 [Editor_1]
-CursorCol=44
-CursorRow=16
+CursorCol=51
+CursorRow=27
 =======
 Order=2,1,0
 Focused=0
-TopLine=4
+TopLine=14
 LeftChar=1
 =======
 Order=2,1,0
@@ -34,9 +34,9 @@ CursorRow=19
 TopLine=14
 LeftChar=1
 [Editor_2]
-CursorCol=11
-CursorRow=17
-TopLine=7
+CursorCol=2
+CursorRow=476
+TopLine=466
 =======
 CursorCol=22
 CursorRow=115

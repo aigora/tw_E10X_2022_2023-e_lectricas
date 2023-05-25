@@ -205,9 +205,37 @@ int main()
 							}
 						}
 						break;
-						case 2:
-							break;
-						case 3:
+					case 2:
+							printf("Selecciona un año:\n");
+							int year;
+							scanf("%d", &year);
+							if (year == 2021 || year == 2022)
+							{
+								printf("Selecciona un mes:\n");
+								int mes;
+								scanf("%d", &mes);
+								if (mes >= 1 && mes <= 12)
+								{
+									printf("Datos del año %d, mes %d:\n", year, mes);
+									int n;
+									for (n = 0; n < 18; n++)
+									{
+									 	printf("%d/%d\t", mes, year);
+										printf("%s %f", energias[n].tipo_energia, energias[n].cant_generada[(year - 2021) * 12 + (mes - 1)]);
+										printf("\n");
+									}
+								}
+								else
+								{
+									printf("Mes inválido.\n");
+								}
+							}
+							else
+							{
+								printf("Año inválido.\n");
+							}
+						    break;
+					case 3:
 							printf("Selecciona una energia:\n");
 							menu_calculos_estadisticos_energia_especifica();
 							int opcion;
