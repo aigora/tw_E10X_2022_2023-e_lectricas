@@ -207,8 +207,38 @@ int main()
 						break;
 						case 2:
 							break;
-							case 3:
-								break;
+						case 3:
+							printf("Selecciona una energia:\n");
+							menu_calculos_estadisticos_energia_especifica();
+							int opcion;
+							scanf("%d", &opcion);
+							if (opcion >= 1 && opcion <= 4)
+							{
+								printf("Datos de la energia %d:\n", opcion);
+								int m;
+								for (m = 0; m < 24; m++) 
+								{
+									printf("%.2f\n", energias[opcion-1].cant_generada[m]);
+								}
+							    printf("\n");
+							}
+							else if (opcion >= 5 && opcion <= 17)
+							{
+								printf("Datos de la energia %d:\n", opcion);
+								int m;
+								for (m = 0; m < 24; m++) 
+								{
+									printf("%.2f\n", energias[opcion].cant_generada[m]);
+								}
+							    printf("\n");
+							}
+							else 
+							{
+								printf("Opcion invalida.\n");
+							}
+							break;
+
+					
 				}
 				printf("%d/%d\n",energias[3].f[1].month,energias[3].f[1].year);
 				break;

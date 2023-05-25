@@ -25,7 +25,7 @@ void menu_calculos_estadisticos_energia_especifica(){
 	printf(" 15-Residuos no renovables \n 16-Residuos renovables\n 17-Generacion total\n ");
 }
 void imprimir_datos_fichero(){
-	printf("1.Imprimir todos los datos ordenados en meses\n 2.Imprimir los datos de un mes\n 3. Imprimir los datos de una energia");
+	printf("1.Imprimir todos los datos ordenados en meses\n 2.Imprimir los datos de un mes\n 3. Imprimir los datos de una energia\n");
 }
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
