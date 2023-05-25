@@ -196,28 +196,19 @@ int main()
 				scanf("%d",&impresion);
 				switch(impresion){
 					case 1:
-						printf("Seleccion year\n");
-						int year;
-						scanf("%d", &year);
-						if (year == 2021 || year == 2022)
-						{
-							for(n=0;n<18;n++){
-							for(m=0;m<12;m++){
-								printf("%d/%d",energias[n].f[m].month,energias[n].f[m].year);
-									printf("%s %f",energias[n].tipo_energia,energias[n].cant_generada[m]);
-									printf("\n");
-							}
+						printf("Selecciona year:\n");
+						for (n = 0; n < 18; n++) {
+						for (m = 0; m < 1; m++) {
+						printf("%d/%d ", energias[n].f[m].month, energias[n].f[m].year);
+						printf("%s %f\n", energias[n].tipo_energia, energias[n].cant_generada[m]);
 						}
 						}
-						else 
-						{
-							printf("year invalido.\n");
-						}
-						
+						break;
+
 						break;
 					case 2:
 							printf("Selecciona un year:\n");
-							
+							int year;
 							scanf("%d", &year);
 							if (year == 2021 || year == 2022)
 							{
