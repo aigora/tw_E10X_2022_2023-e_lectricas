@@ -69,8 +69,12 @@ int main()
 						moda_global = moda(energias);
 						printf("La moda de todos los datos es :%f\n", moda_global);
 						break;
+					case 6:
+						rango_global = rango(energias);
+						printf("EL rango de todos los datos es :%f \n", rango_global);
+						break;
 					default:
-						printf("Numero no valido");
+						printf("Error \n");
 					
 				}
 			}
