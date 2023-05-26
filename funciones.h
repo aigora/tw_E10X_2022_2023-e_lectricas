@@ -22,6 +22,7 @@ float media(tipos *energias);
 float varianza(tipos *energias);
 float desviacion_tipica(tipos *energias);
 float moda_global(tipos*energias);
+float rango_global(tipos*energias);
 float valor_maximo(int filas,int columnas,int filas2,int columnas2,tipos *energias);
 float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energias);
 void ordenacion_maximo(int filas,tipos *energias); 
