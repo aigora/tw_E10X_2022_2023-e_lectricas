@@ -13,6 +13,7 @@ int main()
 	int tam;
 	float mediana_global;
 	float media_global;
+	float rango_global;
 	float varianza_global,varianza2_tipo_energia;
 	float desviacion_tipica_global,desviacion_tipica_2_tipo_energia;
 	int nLineas=0,pos;
