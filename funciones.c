@@ -239,6 +239,15 @@ float moda_global (tipos*energias)
         }
    return moda;
 }
+float rango_global(tipos*energias)
+{
+	int filas=0, columnas=0, filas2=0, columnas2=0;
+	float maximo= valor_maximo(filas, columnas, filas2, columnas2, energias);
+	float minimo = valor_minimo(filas, columnas, filas2, columnas2, energias);
+	float rango = fabs(maximo-minimo);
+	return rango;
+} 
+
 
 
 void ordenar_vector(float vector[], int n){
