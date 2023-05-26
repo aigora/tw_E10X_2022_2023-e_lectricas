@@ -65,6 +65,12 @@ int main()
 						//desviacion_tipica_global = desviacion_tipica(energias)
 						printf("La desviacion tipica de todos los datos es: %f\n",desviacion_tipica_global);
 						break;
+					case 5:
+						moda_global = moda(energias);
+						printf("La moda de todos los datos es :%f\n", moda_global);
+						break;
+					default:
+						printf("Numero no valido");
 					
 				}
 			}
