@@ -382,57 +382,31 @@ void guardar_fecha_tipos(fecha *fech,tipos *energias){
 	  }
 }
 }
-float desviacion_tipica_2(int m, tipos *energias) 
+float varianza2(int m, tipos *energias)
 {
     int i;
     int n = 24;
-    float media = 0;
+    float media = media2(m, energias);
     float suma = 0;
 
-    // Calcula la media de los datos
-    for (i = 0; i < n; i++) {
-        media += energias[m].cant_generada[i];
-    }
-    media =media/ n;
-
-    // Calcula la suma de las diferencias al cuadrado
     for (i = 0; i < n; i++) {
         float diferencia = energias[m].cant_generada[i] - media;
-        suma += diferencia * diferencia;
+        suma = suma+(diferencia * diferencia);
     }
 
-    // Calcula la varianza dividiendo la suma entre el n?mero de datos
-    float varianza2 = suma / n;
-
-    // Calcula la desviaci?n t?pica como la ra?z cuadrada de la varianza
-    float desviacion_tipica_2 = sqrt(varianza2);
-
-    return desviacion_tipica_2;
-}
-float varianza2(int m, tipos *energias) 
-{
-    int i;
-    int n = 24;
-    float media = 0;
-    float suma = 0;
-
-    // Calcula la media de los datos
-    for (i = 0; i < n; i++) {
-        media += energias[m].cant_generada[i];
-    }
-    media =media/ n;
-
-    // Calcula la suma de las diferencias al cuadrado
-    for (i = 0; i < n; i++) {
-        float diferencia = energias[m].cant_generada[i] - media;
-        suma += diferencia * diferencia;
-    }
-
-    // Calcula la varianza dividiendo la suma entre el n?mero de datos
     float varianza2 = suma / n;
 
     return varianza2;
 }
+
+float desviacion_tipica_2(int m, tipos *energias)
+{
+    float varianza = varianza2(m, energias);
+    float desviacion_tipica_2 = sqrt(varianza);
+
+    return desviacion_tipica_2;
+}
+
 
 float varianza(tipos *energias)
 {

@@ -93,7 +93,7 @@ int main()
 					   				
 					   				break;
 					   	case 4:
-					   		varianza2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
+					   		varianza2_tipo_energia=varianza2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("%f\n",varianza2_tipo_energia);
 					   		break;
 					   		case 5:
