@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #define N 23
 int main()
-{
+{ 
 	tipos *energias;
 	fecha *fech;
 	char x;
