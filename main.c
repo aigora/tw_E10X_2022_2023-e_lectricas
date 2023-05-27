@@ -92,28 +92,32 @@ int main()
 					   {
 					   	case 1:
 					   		med_tipo_energia=media2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
-					   		 printf("%f\n",med_tipo_energia);
+					   		 printf("La media es %f\n",med_tipo_energia);
 					   		break;
 					   	case 2:
 					   		mediana2_tipo_energia=mediana2(calculos_estadisticos_energia_especifica,energias);
-					   		printf("%f\n",mediana2_tipo_energia);
+					   		printf("La mediana es %f\n",mediana2_tipo_energia);
 					   			break;
 					   	case 3:
 					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
-					   		printf("%f\n",moda2_tipo_energia);
+					   		printf("La moda es %f\n",moda2_tipo_energia);
 					   				
 					   				break;
 					   	case 4:
 					   		varianza2_tipo_energia=varianza2(calculos_estadisticos_energia_especifica,energias);
-					   		printf("%f\n",varianza2_tipo_energia);
+					   		printf("La varianza es %f\n",varianza2_tipo_energia);
 					   		break;
-					   		case 5:
-					   			  desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
-					   		printf("%f\n",desviacion_tipica_2_tipo_energia);
-					   			break;
+					   	case 5:
+					                desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
+					   		printf("La desviacion tipica es %f\n",desviacion_tipica_2_tipo_energia);
+					   		break;
 					   }
 				    }
 				break;
+				else
+				{
+					printf("Error")
+				}
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
 				printf("Introduzca el nÃºmero de datos que desea agregar: ");
