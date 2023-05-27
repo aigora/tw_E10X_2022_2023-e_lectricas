@@ -184,13 +184,11 @@ float varianza(tipos *energias)
             n++;
         }
     }
-
-    // Calcula la suma de los cuadrados de las diferencias respecto a la media
     for (i = 0; i < n; i++) {
         varianza = varianza + pow(vector[i] - media, 2);
     }
 
-    // Calcula la varianza
+    
     varianza =varianza/ (n - 1);
 
     // Devolver el resultado de la varianza
@@ -313,13 +311,12 @@ void ordenacion_minimo(int filas,tipos *energias){
   //Ahora lo ordenamos
   for(i = 0; i < N - 1; i++)
   {
-    // Comparamos cada elemento con el siguiente
     for(j = i + 1; j < N; j++)
     {
       if (energias[filas].cant_generada[i] > energias[filas].cant_generada[j])
       {
         // Si es mayor intercambiamos el contenido de los dos elementos
-        ener = energias[filas].cant_generada[i]; //Necesitamos una variable auxiliar de almacenamiento temporal
+        ener = energias[filas].cant_generada[i]; 
         energias[filas].cant_generada[i] = energias[filas].cant_generada[j];
         energias[filas].cant_generada[j] =ener;
       }
@@ -491,53 +488,6 @@ float desviacion_tipica_2(int m, tipos *energias)
     return desviacion_tipica_2;
 }
 
-
-float varianza(tipos *energias)
-{
-    float* vector = NULL;
-    int n = 0;
-    float varianza = 0.0;
-    float media = media;
-
-    // Agregar elementos al vector
-    int i,j;
-    for ( i = 0; i < 17; i++)
-	 {
-        for ( j = 0; j < 24; j++)
-		 {
-            float elem = energias[i].cant_generada[j];
-            vector = (float*)realloc(vector, sizeof(float) * (n + 1));
-            vector[n] = elem;
-            n++;
-        }
-    }
-
-    // Calcula la suma de los cuadrados de las diferencias respecto a la media
-    for (i = 0; i < n; i++) {
-        varianza = varianza + pow(vector[i] - media, 2);
-    }
-
-    // Calcula la varianza
-    varianza =varianza/ (n - 1);
-
-    // Devolver el resultado de la varianza
-    return varianza;
-}
-float desviacion_tipica(tipos *energias)
-{
-	
-	float varianza;
-	varianza = varianza;
-	
-	float desviacion_tipica;
-	desviacion_tipica = sqrt(varianza);
-	
-	
-	return desviacion_tipica;
-	
-	
-	//hacer la raiz cuadrada de la varianza
-}
 float rango2(int m, tipos *energias) 
 {
     float min = energias[m].cant_generada[0];
