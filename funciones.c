@@ -492,20 +492,21 @@ float rango2(int m, tipos *energias)
 {
     float min = energias[m].cant_generada[0];
     float max = energias[m].cant_generada[0];
+    int i;
 
-    for (int i = 1; i < 24; i++) 
+    for (i = 1; i < 24; i++) 
 	{
         if (energias[m].cant_generada[i] < min) 
-		{
+	{
             min = energias[m].cant_generada[i];
         }
 
         if (energias[m].cant_generada[i] > max) 
-		{
+	{
             max = energias[m].cant_generada[i];
         }
     }
-    rango2=max-min;
+    float rango2=fabs(max-min);
 
     return rango2;
 }
