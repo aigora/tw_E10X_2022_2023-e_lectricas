@@ -122,7 +122,7 @@ int main()
 				    }
 				else
 				{
-					printf("Error")
+					printf("Error");
 				}
 				break;
 				
