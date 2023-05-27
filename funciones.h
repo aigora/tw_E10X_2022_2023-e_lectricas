@@ -16,6 +16,7 @@ float mediana(tipos *energias);
 float mediana2(int m,tipos *energias);//funcion para calculo anual y mensual
 float media2(int m,tipos *energias);//funcion calculo anual y mensual
 float rango2(int m, tipos *energias);
+float moda2(int m, tipos *energias);
 void swap(float* n1, float* n2);
 void ordenar_vector(float vector[], int n);
 void guardar_fecha_tipos(fecha *fech,tipos *energias);//funcion asignaciÃ³n fecha a la estructura tipos

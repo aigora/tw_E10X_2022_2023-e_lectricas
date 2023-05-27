@@ -3,18 +3,20 @@
 #include"funciones.h"
 #include <string.h>
 #define N 24
+#include <math.h>
+#include <stdlib.h>
 void menu(){
 		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Imprimir valores\n");
 }
 
 void menu_calculos_estadisticos() {
-	printf("1 - Mediana global\n2 - Media global\nOpcion seleccionada: ");
+	printf("1 - Mediana global\n2 - Media global\n 3-Varianza global\n 4-Desviacion tipica global\n 5-Moda global \n 6-Rango global\nOpcion seleccionada: ");
 }
 void menu_maximos_y_minimos(){
 	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
 }
 	void menu_calculos_estadisticos_mensuales(){
-	printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n 5.Desviacion tipica mensual\n Opcion seleccionada:");
+	printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n 5.Desviacion tipica mensual\n 6. Rango mensual\n Opcion seleccionada:");
 	}
 void ordenar(){
 	printf("1.OrdenaciÃ³n de mayor a menor\n 2.OrdenaciÃ³n de menor a mayor\n");
@@ -81,7 +83,7 @@ void guardar_datos_generacion_fechas(fecha *f){
   else
   {
       printf("Se ha abierto correctamente\n");
-             fseek(pf,220, SEEK_SET);
+             fseek(pf,216, SEEK_SET);
              pos=tell(pf);
                  printf("La posicion actual del puntero es %ld bytes.\n", pos);
                 for(i=0;i<24;i++){
@@ -209,21 +211,22 @@ float desviacion_tipica(tipos *energias)
 	
 	
 }
-float moda_global (tipos*energias)
+
+float moda_global(tipos*energias)
 {
 	int i,j;
 	
 	float* vector= NULL;
 	int frecuencia=0;
     int n = 0;
-    int moda = 0; // Valor inicial para la moda
+    float moda = 0; // Valor inicial para la moda
     int frecuencia_max = 0; // Valor inicial para la frecuencia máxima
-
-    for ( i = 0; i < 17; i++)
+    float elem;
+    for ( i = 0; i < 18; i++)
 	 {
         for ( j = 0; j < 24; j++)
 		 {
-            float elem = energias[i].cant_generada[j];
+             elem = energias[i].cant_generada[j];
             vector = (float*)realloc(vector, sizeof(float) * (n + 1));
             vector[n] = elem;
             n++;

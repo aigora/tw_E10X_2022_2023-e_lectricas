@@ -6,17 +6,17 @@ Order=0,1,2
 Focused=0
 [Editor_0]
 <<<<<<< HEAD
-CursorCol=30
-CursorRow=199
-TopLine=192
+CursorCol=43
+CursorRow=64
+TopLine=95
 LeftChar=1
 [Editor_1]
-CursorCol=51
+CursorCol=7
 CursorRow=27
 =======
 Order=2,1,0
 Focused=0
-TopLine=14
+TopLine=11
 LeftChar=1
 =======
 Order=2,1,0
@@ -34,9 +34,9 @@ CursorRow=19
 TopLine=14
 LeftChar=1
 [Editor_2]
-CursorCol=2
-CursorRow=476
-TopLine=457
+CursorCol=136
+CursorRow=19
+TopLine=31
 =======
 CursorCol=22
 CursorRow=115

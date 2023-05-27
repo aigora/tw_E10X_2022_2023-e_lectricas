@@ -13,12 +13,13 @@ int main()
 	int tam;
 	float mediana_global;
 	float media_global;
-	float moda_global;
-	float rango_global, rango2_tipo_energia;
+	float moda_glob;
+	float rango_glob, rango2_tipo_energia;
 	float varianza_global,varianza2_tipo_energia;
 	float desviacion_tipica_global,desviacion_tipica_2_tipo_energia;
 	int nLineas=0,pos;
 	int numero;
+	int mes;
 	int num_calculos_estadisticos,num_calculos_estadisticos_mensuales;
 	float med_tipo_energia;
 	float mediana2_tipo_energia;
@@ -60,20 +61,21 @@ int main()
 						printf("La media de todos los datos es: %f\n", media_global);
 						break;		
 					case 3:
-						//varianza_global= varianza(energias)
+						varianza_global= varianza(energias);
 						printf("La varianza de todos los datos es : %f\n", varianza_global);
 						break;
 					case 4:
-						//desviacion_tipica_global = desviacion_tipica(energias)
+						desviacion_tipica_global = desviacion_tipica(energias);
 						printf("La desviacion tipica de todos los datos es: %f\n",desviacion_tipica_global);
 						break;
 					case 5:
-						moda_global = moda(energias);
-						printf("La moda de todos los datos es :%f\n", moda_global);
+					   moda_glob = moda_global(energias);
+						printf("La moda de todos los datos es :%f\n", moda_glob);
+					
 						break;
 					case 6:
-						rango_global = rango(energias);
-						printf("EL rango de todos los datos es :%f \n", rango_global);
+				      	rango_glob = rango_global(energias);
+						printf("EL rango de todos los datos es :%f \n", rango_glob);
 						break;
 					default:
 						printf("Error \n");
@@ -102,20 +104,19 @@ int main()
 					   	case 3:
 					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La moda es %f\n",moda2_tipo_energia);
-					   				
 					   				break;
 					   	case 4:
 					   		varianza2_tipo_energia=varianza2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La varianza es %f\n",varianza2_tipo_energia);
 					   		break;
 					   	case 5:
-					                desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
+					        desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La desviacion tipica es %f\n",desviacion_tipica_2_tipo_energia);
 					   		break;
 						case 6:
-					   		rango2_tipo_energia=rango2(calculos_estadisticos_energia_especifica,energias);
+							rango2_tipo_energia=rango2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("El rango es %f\n",rango2_tipo_energia);
-					   		break;
+					   	break;
 					   	default:
 					   		printf("Error");
 					   		break;
@@ -220,14 +221,16 @@ int main()
 				scanf("%d",&impresion);
 				switch(impresion){
 					case 1:
-						printf("Selecciona year:\n");
-						for (n = 0; n < 18; n++) {
-						for (m = 0; m < 1; m++) {
-						printf("%d/%d ", energias[n].f[m].month, energias[n].f[m].year);
-						printf("%s %f\n", energias[n].tipo_energia, energias[n].cant_generada[m]);
+					printf("Imprimir todos los datos\n");
+						for(m=0;m<24;m++){
+								printf("%d/%d\n\n",energias[1].f[m].month,energias[1].f[m].year);
+				           for(n=0;n<18;n++){
+							
+									printf("%s %f",energias[n].tipo_energia,energias[n].cant_generada[m]);
+									printf("\n");
+							}
+							printf("\n");
 						}
-						}
-						break;
 
 						break;
 					case 2:
@@ -243,9 +246,10 @@ int main()
 								{
 									printf("Datos del year %d, mes %d:\n", year, mes);
 									int n;
+										printf("%d/%d\n", mes, year);
 									for (n = 0; n < 18; n++)
 									{
-									 	printf("%d/%d\t", mes, year);
+									 
 										printf("%s %f", energias[n].tipo_energia, energias[n].cant_generada[(year - 2021) * 12 + (mes - 1)]);
 										printf("\n");
 									}
@@ -269,6 +273,7 @@ int main()
 							{
 								printf("Datos de la energia %d:\n", opcion);
 								int m;
+									printf("%s",energias[opcion].tipo_energia);
 								for (m = 0; m < 24; m++) 
 								{
 									printf("%.2f\n", energias[opcion-1].cant_generada[m]);
@@ -279,9 +284,10 @@ int main()
 							{
 								printf("Datos de la energia %d:\n", opcion);
 								int m;
+								printf("%s\n",energias[opcion].tipo_energia);
 								for (m = 0; m < 24; m++) 
 								{
-									printf("%.2f\n", energias[opcion].cant_generada[m]);
+									printf("%.2f\t", energias[opcion].cant_generada[m]);
 								}
 							    printf("\n");
 							}
