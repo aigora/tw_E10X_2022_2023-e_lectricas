@@ -13,7 +13,7 @@ int main()
 	int tam;
 	float mediana_global;
 	float media_global;
-	float rango_global;
+	float rango_global, rango2_tipo_energia;
 	float varianza_global,varianza2_tipo_energia;
 	float desviacion_tipica_global,desviacion_tipica_2_tipo_energia;
 	int nLineas=0,pos;
@@ -110,6 +110,13 @@ int main()
 					   	case 5:
 					                desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La desviacion tipica es %f\n",desviacion_tipica_2_tipo_energia);
+					   		break;
+						case 6:
+					   		rango2_tipo_energia=rango2(calculos_estadisticos_energia_especifica,energias);
+					   		printf("El rango es %f\n",rango2_tipo_energia);
+					   		break;
+					   	default:
+					   		printf("Error");
 					   		break;
 					   }
 				    }
