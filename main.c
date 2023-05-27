@@ -120,11 +120,12 @@ int main()
 					   		break;
 					   }
 				    }
-				break;
 				else
 				{
 					printf("Error")
 				}
+				break;
+				
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
 				printf("Introduzca el nÃºmero de datos que desea agregar: ");
