@@ -11,4 +11,5 @@ Laura Antona Díaz ( Lauraantonadiaz)
 Solomiya Havryshko
 ## Objetivos del trabajo
 
-[Lista de los objetivos que se persiguen con el trabajo propuesto.]
+[Objetivos]
+Realizar diferentes calculos estadisticos con los datos de las  diferentes energías.
