@@ -121,31 +121,31 @@ int main()
 					   		 	guardado_de_datos("med_tipo_energia",med_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   		break;
 					   	case 2:
-					   		mediana2_tipo_energia=mediana2(calculos_estadisticos_energia_especifica,energias);
+					   		mediana2_tipo_energia=mediana2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		printf("La mediana es %f\n",mediana2_tipo_energia);
 					   		nombre_calculo="mediana2_tipo_energia";
 					   		guardado_de_datos(nombre_calculo,mediana2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   			break;
 					   	case 3:
-					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
+					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		printf("La moda es %f\n",moda2_tipo_energia);
 					   		nombre_calculo="moda2_tipo_energia";
 					   		guardado_de_datos(nombre_calculo,moda2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   				break;
 					   	case 4:
-					   		varianza2_tipo_energia=varianza2(calculos_estadisticos_energia_especifica,energias);
+					   		varianza2_tipo_energia=varianza2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		printf("La varianza es %f\n",varianza2_tipo_energia);
 					   		nombre_calculo="varianza2_tipo_energia";
 					   		guardado_de_datos(nombre_calculo,varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales");
 					   		break;
 					   	case 5:
-					        desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
+					                desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		printf("La desviacion tipica es %f\n",desviacion_tipica_2_tipo_energia);
 					   		nombre_calculo="desviacion_tipica_2_tipo_energia";
 					   		guardado_de_datos(nombre_calculo,varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   		break;
 						case 6:
-							rango2_tipo_energia=rango2(calculos_estadisticos_energia_especifica,energias);
+							rango2_tipo_energia=rango2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		printf("El rango es %f\n",rango2_tipo_energia);
 					   		nombre_calculo="rango2_tipo_energia";
 					   		guardado_de_datos(nombre_calculo,rango2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
