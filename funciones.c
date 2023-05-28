@@ -476,8 +476,10 @@ float moda2(int m, tipos *energias)//funcion para calculo anual y mensual
 
         if (frecuencia > maxFrecuencia) 
 	{
-            maxFrecuencia = frecuencia; // Actualizar la frecuencia maxima
-            moda2 = energias[m].cant_generada[i]; // Actualizar la moda
+	    // Actualizar la frecuencia maxima
+            maxFrecuencia = frecuencia; 
+	    // Actualizar la moda
+            moda2 = energias[m].cant_generada[i]; 
         }
     }
 
@@ -493,33 +495,39 @@ void guardar_fecha_tipos(fecha *fech,tipos *energias){
 	  }
 }
 }
-float varianza2(int m, tipos *energias)
+float varianza2(int m, tipos *energias)//funcion para calculo anual y mensual
 {
     int i;
     int n = 24;
+    // Calcula la media utilizando otra función
     float media = media2(m, energias);
     float suma = 0;
 
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) 
+    {
+	// Calcula la diferencia entre la cantidad generada y la media
         float diferencia = energias[m].cant_generada[i] - media;
         suma = suma+(diferencia * diferencia);
     }
-
+    // Calcula la varianza al cuadrado dividiendo la suma entre n
     float varianza2 = suma / n;
 
     return varianza2;
 }
 
-float desviacion_tipica_2(int m, tipos *energias)
+float desviacion_tipica_2(int m, tipos *energias)//funcion para calculo anual y mensual
 {
+    // Calcula la varianza utilizando otra función
     float varianza = varianza2(m, energias);
+    // Calcula la raíz cuadrada de la varianza para obtener la desviación típica
     float desviacion_tipica_2 = sqrt(varianza);
 
     return desviacion_tipica_2;
 }
 
-float rango2(int m, tipos *energias) 
+float rango2(int m, tipos *energias) //funcion para calculo anual y mensual
 {
+    // Inicializa el mínimo y el máximo con el primer valor de la cantidad generada
     float min = energias[m].cant_generada[0];
     float max = energias[m].cant_generada[0];
     int i;
@@ -528,14 +536,17 @@ float rango2(int m, tipos *energias)
 	{
         if (energias[m].cant_generada[i] < min) 
 	{
+	    // Actualiza el mínimo si se encuentra un valor menor
             min = energias[m].cant_generada[i];
         }
 
         if (energias[m].cant_generada[i] > max) 
 	{
+	    // Actualiza el máximo si se encuentra un valor mayor
             max = energias[m].cant_generada[i];
         }
     }
+    // Calcula el valor absoluto de la diferencia entre el máximo y el mínimo
     float rango2=fabs(max-min);
 
     return rango2;
