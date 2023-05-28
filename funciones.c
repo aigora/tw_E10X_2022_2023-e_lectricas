@@ -415,22 +415,24 @@ float media2(int m,tipos *energias)//funcion para calculo anual y mensual
 	med=med/24;
 	return med;
 }
-float mediana2(int m, tipos *energias)
+float mediana2(int m, tipos *energias)//funcion para calculo anual y mensual
 {
     int i, j;
-    int n = 24; // Numero de elementos en el arreglo
+    int n = 24; 
 
     float valores[n];
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) 
+    {
         valores[i] = energias[m].cant_generada[i];
     }
 
     // Ordenamos los datos de forma ascendente 
-    for (i = 0; i < n - 1; i++) {
+    for (i = 0; i < n - 1; i++) 
+    {
         for (j = 0; j < n - i - 1; j++) 
-		{
+	{
             if (valores[j] > valores[j + 1]) 
-			{
+	    {
                 float temp = valores[j];
                 valores[j] = valores[j + 1];
                 valores[j + 1] = temp;
@@ -453,24 +455,27 @@ float mediana2(int m, tipos *energias)
 
     return mediana2;
 }
-float moda2(int m, tipos *energias)
+float moda2(int m, tipos *energias)//funcion para calculo anual y mensual
 {
-	int i, j;
-
-    int moda2 = 0; // Valor inicial para la moda
-    int maxFrecuencia = 0; // Valor inicial para la frecuencia mÃƒÂ¡xima
+    int i, j;
+    // Valor inicial para la moda
+    int moda2 = 0; 
+    // Valor inicial para la frecuencia maxima
+    int maxFrecuencia = 0; 
 
     for (i = 0; i < 24; i++) {
         int frecuencia = 0; 
 
         for (j = 0; j < 24; j++) {
-            if (energias[m].cant_generada[i] == energias[m].cant_generada[j]) {
-                frecuencia++; // Incrementar la frecuencia
+            if (energias[m].cant_generada[i] == energias[m].cant_generada[j]) 
+	    {
+		// Incrementar la frecuencia
+                frecuencia++; 
             }
         }
 
         if (frecuencia > maxFrecuencia) 
-		{
+	{
             maxFrecuencia = frecuencia; // Actualizar la frecuencia maxima
             moda2 = energias[m].cant_generada[i]; // Actualizar la moda
         }
