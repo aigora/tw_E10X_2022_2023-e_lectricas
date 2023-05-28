@@ -1,4 +1,4 @@
-//implementaciÃƒÆ’Ã‚Â³n de las funciones
+//implementacion de las funciones
 #include<stdio.h>
 #include"funciones.h"
 #include <string.h>
@@ -19,10 +19,10 @@ void menu_maximos_y_minimos(){
 	printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n 5.Desviacion tipica mensual\n 6. Rango mensual\n Opcion seleccionada:");
 	}
 void ordenar(){
-	printf("1.OrdenaciÃ³n de mayor a menor\n 2.OrdenaciÃ³n de menor a mayor\n");
+	printf("1.OrdenaciÃƒÂ³n de mayor a menor\n 2.OrdenaciÃƒÂ³n de menor a mayor\n");
 }
 void menu_calculos_estadisticos_energia_especifica(){
-	printf(" 1-Hidraulica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diÃ©sel\n 6-Turbina de gas\n 7-Turbina de motor\n");
+	printf(" 1-Hidraulica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diÃƒÂ©sel\n 6-Turbina de gas\n 7-Turbina de motor\n");
 	printf(" 8-Ciclo combinado \n 9-Hidroeolica\n 10-Eolica\n 11-Solar fotovoltaica\n 12-Solar termica\n 13-Otros renovables\n 14-Congeneracion\n");
 	printf(" 15-Residuos no renovables \n 16-Residuos renovables\n 17-Generacion total\n ");
 }
@@ -45,7 +45,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 int linea_actual = 0;
     fseek(pf, 390, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
  pos = ftell(pf);
-    printf("La posiciÃƒÆ’Ã‚Â³n actual del puntero es %ld bytes.\n", pos);
+    printf("La posiciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n actual del puntero es %ld bytes.\n", pos);
 while ( linea_actual <= 23) {
 	fscanf(pf,"%[^,],%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n",
         datos[linea_actual].tipo_energia, &datos[linea_actual].cant_generada[0],
@@ -61,7 +61,7 @@ while ( linea_actual <= 23) {
         &datos[linea_actual].cant_generada[19], &datos[linea_actual].cant_generada[20],
         &datos[linea_actual].cant_generada[21], &datos[linea_actual].cant_generada[22],
         &datos[linea_actual].cant_generada[23]);
-    // Leer los datos de la lÃƒÆ’Ã‚Â­nea actual
+    // Leer los datos de la lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­nea actual
     linea_actual++;
 }
 }
@@ -122,10 +122,10 @@ float mediana(tipos *energias){
 	int posicion_mediana = n/2;
 	
 	if(n%2 == 0) {
-		// Si la lista tiene un tamaÃ±o par, la mediana sera el promedio de los dos valores centrales
+		// Si la lista tiene un tamanyo par, la mediana sera el promedio de los dos valores centrales
 		return (vector[posicion_mediana-1] + vector[posicion_mediana])/2.0;
 	} else {
-		// Si la lista tiene un tamaÃ±o impar, la mediana sera el valor en la posicion central
+		// Si la lista tiene un tamanyo impar, la mediana sera el valor en la posicion central
 		return vector[posicion_mediana];
 	}
 	
@@ -187,7 +187,7 @@ float varianza(tipos *energias)
         }
     }
     for (i = 0; i < n; i++) {
-        varianza = varianza + pow(vector[i] - media, 2);
+        varianza = varianza + pow(vector[i] - media, 2); //operacion correspondiente al calculo de la varianza
     }
 
     
@@ -203,7 +203,7 @@ float desviacion_tipica(tipos *energias)
 	float varianza;
 	varianza = varianza;
 	float desviacion_tipica;
-	desviacion_tipica = sqrt(varianza);
+	desviacion_tipica = sqrt(varianza);//opereacion correspondiente al calculo de la desviacion tipica
 	
 	
 	return desviacion_tipica;
@@ -220,12 +220,12 @@ float moda_global(tipos*energias)
 	int frecuencia=0;
     int n = 0;
     float moda = 0; // Valor inicial para la moda
-    int frecuencia_max = 0; // Valor inicial para la frecuencia máxima
+    int frecuencia_max = 0; // Valor inicial para la frecuencia mÃ¡xima
     float elem;
     for ( i = 0; i < 18; i++)
 	 {
         for ( j = 0; j < 24; j++)
-		 {
+		 {     
              elem = energias[i].cant_generada[j];
             vector = (float*)realloc(vector, sizeof(float) * (n + 1));
             vector[n] = elem;
@@ -233,7 +233,7 @@ float moda_global(tipos*energias)
         }
     }
 
-        if (frecuencia > frecuencia_max) 
+        if (frecuencia > frecuencia_max)  //operacion asignada al calculo de la moda
 		{
             frecuencia_max= frecuencia; 
             moda = energias[i].cant_generada[j]; 
@@ -243,9 +243,9 @@ float moda_global(tipos*energias)
 float rango_global(tipos*energias)
 {
 	int filas=0, columnas=0, filas2=0, columnas2=0;
-	float maximo= valor_maximo(filas, columnas, filas2, columnas2, energias);
+	float maximo= valor_maximo(filas, columnas, filas2, columnas2, energias); 
 	float minimo = valor_minimo(filas, columnas, filas2, columnas2, energias);
-	float rango = fabs(maximo-minimo);
+	float rango = fabs(maximo-minimo);//operacion asignada al calculo del rango
 	return rango;
 } 
 
@@ -280,7 +280,7 @@ float valor_maximo(int filas,int columnas,int filas2,int columnas2,tipos *energi
 			for (j = columnas; j < columnas2; j++) {
             if (energias[i].cant_generada[j] >= maximo) 
             {
-            	//ActualizaciÃƒÂ³n del valor 'maximo'
+            	//ActualizaciÃƒÆ’Ã‚Â³n del valor 'maximo'
             	maximo = energias[i].cant_generada[j];
 			}
         }
@@ -298,7 +298,7 @@ float valor_minimo(int filas,int columnas,int filas2,int columnas2,tipos *energi
 		{
             if (energias[i].cant_generada[j] <= minimo) 
 			{
-				//ActualizaciÃƒÂ³n del valor 'minimo'
+				//Actualizacion del valor 'minimo'
                 minimo = energias[i].cant_generada[j];
             }
         }
@@ -372,11 +372,11 @@ void buscar(char cadena[40],tipos *energia) {
 	}
 	else{
 	printf("No se ha encontrado\n");
-	printf("Desea a�adirla\n");
-	printf("Si desea a�adirla pulse 1 sino 2");
+	printf("Desea añadirla\n");
+	printf("Si desea añadirla pulse 1 sino 2");
 	scanf("%d",&num);
 	if(num==1){
-		//funcion a�adir datos
+		//funcion añadir datos
 	}
 	else
 	printf("No se ha guardado el dato\n");
@@ -418,7 +418,7 @@ float media2(int m,tipos *energias)//funcion para calculo anual y mensual
 float mediana2(int m, tipos *energias)
 {
     int i, j;
-    int n = 24; // NÃºmero de elementos en el arreglo
+    int n = 24; // Numero de elementos en el arreglo
 
     float valores[n];
     for (i = 0; i < n; i++) {
@@ -442,12 +442,12 @@ float mediana2(int m, tipos *energias)
     float mediana2;
     if (n % 2 == 0) 
 	{
-        // Si hay un nÃºmero par de elementos, la mediana sera el promedio de los dos valores centrales
+        // Si hay un numero par de elementos, la mediana sera el promedio de los dos valores centrales
         mediana2 = (valores[n / 2 - 1] + valores[n / 2]) / 2.0;
     } 
 	else 
 	{
-        // Si hay un nÃºmero impar de elementos, tomamos el valor del medio
+        // Si hay un numero impar de elementos, tomamos el valor del medio
         mediana2 = valores[n / 2];
     }
 
@@ -458,7 +458,7 @@ float moda2(int m, tipos *energias)
 	int i, j;
 
     int moda2 = 0; // Valor inicial para la moda
-    int maxFrecuencia = 0; // Valor inicial para la frecuencia mÃ¡xima
+    int maxFrecuencia = 0; // Valor inicial para la frecuencia mÃƒÂ¡xima
 
     for (i = 0; i < 24; i++) {
         int frecuencia = 0; 
@@ -471,7 +471,7 @@ float moda2(int m, tipos *energias)
 
         if (frecuencia > maxFrecuencia) 
 		{
-            maxFrecuencia = frecuencia; // Actualizar la frecuencia mÃ¡xima
+            maxFrecuencia = frecuencia; // Actualizar la frecuencia maxima
             moda2 = energias[m].cant_generada[i]; // Actualizar la moda
         }
     }
