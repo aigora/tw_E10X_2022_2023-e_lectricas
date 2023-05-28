@@ -312,9 +312,9 @@ void ordenacion_minimo(int filas,tipos *energias){
 	int k;
 	float ener;
   //Ahora lo ordenamos
-  for(i = 0; i < N - 1; i++)
+  for(i = 0; i < N - 2; i++)
   {
-    for(j = i + 1; j < N; j++)
+    for(j = i + 2; j < N; j++)
     {
       if (energias[filas].cant_generada[i] > energias[filas].cant_generada[j])
       {
@@ -553,4 +553,9 @@ FILE *pf;
     fclose(pf);
 }
 }
-
+void vaciar_archivo(char* archivo){
+    FILE* pf = fopen(archivo, "w");
+    if (pf != NULL ){
+        fclose(pf);
+}
+}

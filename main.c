@@ -11,6 +11,7 @@ int main()
 	int num;
 	int tipo;
 	int tam;
+	int guardado;
 	float mediana_global;
 	float media_global;
 	float moda_glob;
@@ -192,30 +193,24 @@ int main()
 				break;
 			case 3:
 				printf("GUARDAR RESULTADOS\n");
-				for( linea_actual=0;linea_actual<17;linea_actual++) {
-	printf("%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n",
-        energias[linea_actual].tipo_energia,  energias[linea_actual].cant_generada[0],
-        energias[linea_actual].cant_generada[1],  energias[linea_actual].cant_generada[2],
-        energias[linea_actual].cant_generada[3],  energias[linea_actual].cant_generada[4],
-        energias[linea_actual].cant_generada[5],  energias[linea_actual].cant_generada[6],
-         energias[linea_actual].cant_generada[7],  energias[linea_actual].cant_generada[8],
-         energias[linea_actual].cant_generada[9],  energias[linea_actual].cant_generada[10],
-        energias[linea_actual].cant_generada[11],  energias[linea_actual].cant_generada[12],
-         energias[linea_actual].cant_generada[13],  energias[linea_actual].cant_generada[14],
-         energias[linea_actual].cant_generada[15],  energias[linea_actual].cant_generada[16],
-         energias[linea_actual].cant_generada[17],  energias[linea_actual].cant_generada[18],
-         energias[linea_actual].cant_generada[19],  energias[linea_actual].cant_generada[20],
-         energias[linea_actual].cant_generada[21], energias[linea_actual].cant_generada[22],
-         energias[linea_actual].cant_generada[23]);
-
-}
+                printf("Si desea guardar resultados pulse 1 sino pulse 2");
+                scanf("%d",&guardado);
+                if(guardado==1){
+                	printf("Se ha guardado correctamente\n");
+				}
+				else
+				{
+					
+					vaciar_archivo("guardado_de_calculos_estadisticos_mensuales.txt");
+					vaciar_archivo("guardado_de_calculos_estadisticos_globales.txt");
+					printf("No se ha guardado");
+				}
 				break;
 			case 4:
 				printf("BUSQUEDAS\n");
 				printf("Introduzca la energia que desea buscar con la primera letra en mayuscula\n");
 				scanf("%s",cad);
 		        buscar(cad,energias);
-		       
 	         	break;
 			case 5:
 				printf("ORDENACION DE VALORES\n");
@@ -240,27 +235,27 @@ int main()
 					case 1:
 			           printf("Introduzca el mes del cual quiere ver el maximo (0-24)\n");
 	                   scanf("%d",&z);
-	                   max_year=valor_maximo(0,z-1,17,z,energias);
+	                   max_year=valor_maximo(0,z-1,16,z,energias);
 					   break;
 					case 2:
 						printf("Introduzca el mes del cual quiere ver el minimo\n");
 	                    scanf("%d",&z);
-						min_year=valor_minimo(0,z-1,17,z,energias);
+						min_year=valor_minimo(0,z-1,16,z,energias);
 						break;		
 					case 3:
 						printf("Introduzca el periodo del cual quiere ver el maximo de los meses entre(1-24)\n");
 	                    scanf("%d %d",&z,&f);
-						max_year=valor_maximo(0,z,17,f,energias);
+						max_year=valor_maximo(0,z,16,f,energias);
 						break;
 				    case 4:
 						printf("Introduzca el periodo del cual quiere ver el minimo de los meses entre(1-24)\n");
 	                    scanf("%d %d",&z,&f);
-					    min_year=valor_minimo(0,z,17,f,energias);
+					    min_year=valor_minimo(0,z,16,f,energias);
 						break;	
 					case 5:
 					   printf("Minimo y maximo totales\n");
-			  min_total=valor_minimo(0,0,17,24,energias);	
-	                   max_total=valor_maximo(0,0,17,24,energias);
+			  min_total=valor_minimo(0,0,16,24,energias);	
+	                   max_total=valor_maximo(0,0,16,24,energias);
 	                   break;
 				}	
 			break;
