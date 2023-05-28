@@ -44,7 +44,7 @@ int main()
 	printf("Introduzca el numero de la operacion que desea realizar:\n");
 	  menu(); //carga del menu
 		scanf("%d",&numero);
-		switch(numero){
+		switch(numero){ //carga del menu calculos estadisticos
 			case 1:
 				printf("Seleccione si desea realizar los calculos estadisticos\n1.Globales\n2.De un tipo de energia especifica\n");
 				scanf("%d",&num);
@@ -167,7 +167,7 @@ int main()
 				printf("Introduzca el numero de datos que desea agregar: ");
                 scanf("%d", &tam);
 
-                // Aumentar el tamaÃ±o del arreglo dinÃ¡mico para contener los nuevos datos
+                // Aumentar el tamanyo del arreglo dinamico para contener los nuevos datos
                 energias = realloc(energias, sizeof(tipos) * (N + tam));
                 int i;
                 int j;
@@ -180,7 +180,7 @@ int main()
                     printf("Ingrese el tipo de energÃ­a: ");
                     scanf("%s", &energias[i].tipo_energia);
 
-                    printf("Ingrese la fecha (formato: mes aÃ±o): ");
+                    printf("Ingrese la fecha (formato: mes anyo): ");
                     scanf("%d %d", &energias[i].f[0].month, &energias[i].f[0].year);
 
                     printf("Ingrese la cantidad generada: ");
@@ -188,7 +188,7 @@ int main()
                     	     scanf("%f", &energias[i].cant_generada[j]);
 					}
                 }
-                n = n + tam; // Actualizo el tamaÃ±o total del arreglo.
+                n = n + tam; // Actualizo el tamanyo total del arreglo.
                 printf("Los nuevos datos se han agregado correctamente.\n");
 				break;
 			case 3:
