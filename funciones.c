@@ -33,7 +33,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
 	 int pos;
 	  // Abrir el archivo de lectura
-   pf = fopen("generacion_por_tecnologias.txt", "r");
+   pf = fopen("generacion_por_tecnologias_21_22_puntos_simplificado.csv", "r");
 
   if (pf == NULL)
   {
@@ -43,7 +43,7 @@ void guardar_datos_generacion_energias(tipos *datos){
   {
   	printf("Se ha abierto correctamente\n");
 int linea_actual = 0;
-    fseek(pf, 413, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
+    fseek(pf, 390, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
  pos = ftell(pf);
     printf("La posiciÃƒÆ’Ã‚Â³n actual del puntero es %ld bytes.\n", pos);
 while ( linea_actual <= 23) {
@@ -361,17 +361,26 @@ void ordenacion_maximo(int filas,tipos *energias){
 void buscar(char cadena[40],tipos *energia) {
 	int j;
 	int p=0;
+	int num=0;
     	for(j=0;j<18;j++){
-    		if(cadena==energia[j].tipo_energia){
+    		if(strcmp(cadena, energia[j].tipo_energia) == 0){
     			p=1;
 			}
 	}
 	if(p==1){
 		printf("Se ha encontrado el tipo de energia");
 	}
-	else
+	else{
 	printf("No se ha encontrado\n");
-	
+	printf("Desea a�adirla\n");
+	printf("Si desea a�adirla pulse 1 sino 2");
+	scanf("%d",&num);
+	if(num==1){
+		//funcion a�adir datos
+	}
+	else
+	printf("No se ha guardado el dato\n");
+}
 }
 
 int cerrar(){

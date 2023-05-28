@@ -171,6 +171,23 @@ int main()
 				break;
 			case 3:
 				printf("GUARDAR RESULTADOS\n");
+				for( linea_actual=0;linea_actual<17;linea_actual++) {
+	printf("%s,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n",
+        energias[linea_actual].tipo_energia,  energias[linea_actual].cant_generada[0],
+        energias[linea_actual].cant_generada[1],  energias[linea_actual].cant_generada[2],
+        energias[linea_actual].cant_generada[3],  energias[linea_actual].cant_generada[4],
+        energias[linea_actual].cant_generada[5],  energias[linea_actual].cant_generada[6],
+         energias[linea_actual].cant_generada[7],  energias[linea_actual].cant_generada[8],
+         energias[linea_actual].cant_generada[9],  energias[linea_actual].cant_generada[10],
+        energias[linea_actual].cant_generada[11],  energias[linea_actual].cant_generada[12],
+         energias[linea_actual].cant_generada[13],  energias[linea_actual].cant_generada[14],
+         energias[linea_actual].cant_generada[15],  energias[linea_actual].cant_generada[16],
+         energias[linea_actual].cant_generada[17],  energias[linea_actual].cant_generada[18],
+         energias[linea_actual].cant_generada[19],  energias[linea_actual].cant_generada[20],
+         energias[linea_actual].cant_generada[21], energias[linea_actual].cant_generada[22],
+         energias[linea_actual].cant_generada[23]);
+
+}
 				break;
 			case 4:
 				printf("BUSQUEDAS\n");
@@ -234,7 +251,7 @@ int main()
 					printf("Imprimir todos los datos\n");
 						for(m=0;m<24;m++){
 								printf("%d/%d\n\n",energias[1].f[m].month,energias[1].f[m].year);
-				           for(n=0;n<18;n++){
+				           for(n=0;n<17;n++){
 							
 									printf("%s %f",energias[n].tipo_energia,energias[n].cant_generada[m]);
 									printf("\n");
