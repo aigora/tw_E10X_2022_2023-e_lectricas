@@ -289,11 +289,12 @@ int main()
 								{
 									printf("Datos del year %d, mes %d:\n", year, mes);
 									int n;
-										printf("%d/%d\n", mes, year);
+									// Mostrar el formato MM/AAAA
+									printf("%d/%d\n", mes, year);
 									for (n = 0; n < 18; n++)
 									{
-									 
-										printf("%s %f", energias[n].tipo_energia, energias[n].cant_generada[(year - 2021) * 12 + (mes - 1)]);
+										// Mostrar el tipo de energía y la cantidad generada para el año y mes seleccionados
+								                printf("%s %f", energias[n].tipo_energia, energias[n].cant_generada[(year - 2021) * 12 + (mes - 1)]);
 										printf("\n");
 									}
 								}
@@ -316,9 +317,11 @@ int main()
 							{
 								printf("Datos de la energia %d:\n", opcion);
 								int m;
-									printf("%s",energias[opcion].tipo_energia);
+								// Mostrar el tipo de energía
+								printf("%s",energias[opcion].tipo_energia);
 								for (m = 0; m < 24; m++) 
 								{
+									// Mostrar la cantidad generada
 									printf("%.2f\n", energias[opcion-1].cant_generada[m]);
 								}
 							    printf("\n");
@@ -327,9 +330,11 @@ int main()
 							{
 								printf("Datos de la energia %d:\n", opcion);
 								int m;
+								// Mostrar el tipo de energía
 								printf("%s\n",energias[opcion].tipo_energia);
 								for (m = 0; m < 24; m++) 
 								{
+									// Mostrar la cantidad generada
 									printf("%.2f\t", energias[opcion].cant_generada[m]);
 								}
 							    printf("\n");
