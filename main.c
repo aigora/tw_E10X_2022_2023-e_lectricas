@@ -55,27 +55,33 @@ int main()
 					case 1:
 						mediana_global=mediana(energias);
 						printf("La mediana de todos los datos es: %f\n", mediana_global);
+						guardado_de_datos(mediana_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					case 2:
 						media_global=media(energias);
 						printf("La media de todos los datos es: %f\n", media_global);
+						guardado_de_datos(media_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;		
 					case 3:
 						varianza_global= varianza(energias);
 						printf("La varianza de todos los datos es : %f\n", varianza_global);
+							guardado_de_datos(varianza_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					case 4:
 						desviacion_tipica_global = desviacion_tipica(energias);
 						printf("La desviacion tipica de todos los datos es: %f\n",desviacion_tipica_global);
+							guardado_de_datos(desviacion_tipica_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					case 5:
 					   moda_glob = moda_global(energias);
 						printf("La moda de todos los datos es :%f\n", moda_glob);
+							guardado_de_datos(moda_glob, "guardado_de_calculos_estadisticos_globales.txt");
 					
 						break;
 					case 6:
 				      	rango_glob = rango_global(energias);
 						printf("EL rango de todos los datos es :%f \n", rango_glob);
+						guardado_de_datos(rango_glob, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					default:
 						printf("Error \n");
@@ -96,26 +102,32 @@ int main()
 					   	case 1:
 					   		med_tipo_energia=media2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		 printf("La media es %f\n",med_tipo_energia);
+					   		 	guardado_de_datos(med_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   		break;
 					   	case 2:
 					   		mediana2_tipo_energia=mediana2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La mediana es %f\n",mediana2_tipo_energia);
+					   		guardado_de_datos(mediana2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   			break;
 					   	case 3:
 					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La moda es %f\n",moda2_tipo_energia);
+					   		guardado_de_datos(moda2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   				break;
 					   	case 4:
 					   		varianza2_tipo_energia=varianza2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La varianza es %f\n",varianza2_tipo_energia);
+					   		guardado_de_datos(varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales");
 					   		break;
 					   	case 5:
 					        desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La desviacion tipica es %f\n",desviacion_tipica_2_tipo_energia);
+					   		guardado_de_datos(varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   		break;
 						case 6:
 							rango2_tipo_energia=rango2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("El rango es %f\n",rango2_tipo_energia);
+					   		guardado_de_datos(rango2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   	break;
 					   	default:
 					   		printf("Error");
@@ -162,17 +174,15 @@ int main()
 				break;
 			case 4:
 				printf("BUSQUEDAS\n");
-				printf("Introduzca la palabra que desea buscar con la primera letra en mayuscula\n");
+				printf("Introduzca la energia que desea buscar con la primera letra en mayuscula\n");
 				scanf("%s",cad);
-		       buscar(cad,energias);
-	        
-	       		// printf("%d/%d\n", fech[5].month,fech[5].year); 
+		        buscar(cad,energias);
+		       
 	         	break;
-	         
 			case 5:
 				printf("ORDENACION DE VALORES\n");
-				// InicializaciÃƒÂ³n de la variable 'maximo' con el primer valor de 'cant_generada'
-				printf("Introduzca el tipo de energÃ­a del cual quiere ver el mÃ¡ximo\n");
+				// Inicializacion de la variable maximo con el primer valor de 'cant_generada'
+				printf("Introduzca el tipo de energia del cual quiere ver el maximo\n");
 				scanf("%d",&p);
 			     ordenar();
 				scanf("%d",&op);
@@ -185,7 +195,7 @@ int main()
 			 
 	        case 6:   	
 	        printf("Maximos y minimos");
-	        printf("Seleccione si quiere calcular un mÃƒÂ¡ximo o mÃƒÂ­nimo:\n");
+	        printf("Seleccione si quiere calcular un maximo o minimo:\n");
 				menu_maximos_y_minimos();
 				scanf("%d",&r);
 				switch(r){

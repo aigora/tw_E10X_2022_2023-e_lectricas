@@ -3,20 +3,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 Order=0,1,2
-Focused=0
+Focused=-1
 [Editor_0]
 <<<<<<< HEAD
-CursorCol=43
-CursorRow=64
-TopLine=95
+CursorCol=10
+CursorRow=180
+TopLine=167
 LeftChar=1
 [Editor_1]
-CursorCol=7
-CursorRow=27
+CursorCol=1
+CursorRow=38
 =======
 Order=2,1,0
 Focused=0
-TopLine=11
+TopLine=14
 LeftChar=1
 =======
 Order=2,1,0
@@ -34,9 +34,9 @@ CursorRow=19
 TopLine=14
 LeftChar=1
 [Editor_2]
-CursorCol=136
-CursorRow=19
-TopLine=31
+CursorCol=2
+CursorRow=371
+TopLine=357
 =======
 CursorCol=22
 CursorRow=115

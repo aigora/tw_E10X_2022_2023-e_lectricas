@@ -357,22 +357,23 @@ void ordenacion_maximo(int filas,tipos *energias){
 	printf("\n");
 }
 
-void buscar(char cadena[40],tipos *energias){
-	FILE *pf;
-	int i=0;
-	char buscar[40];
-	pf = fopen("generacion_por_tecnologias.txt", "r");
-while (fscanf(pf, "%s", buscar) != EOF) {
-    if (strcmp(buscar, cadena) == 0) {
-   printf("Se ha encontrado este tipo de energÃ­a\n");
-   break;
+
+void buscar(char cadena[40],tipos *energia) {
+	int j;
+	int p=0;
+    	for(j=0;j<18;j++){
+    		if(cadena==energia[j].tipo_energia){
+    			p=1;
+			}
+	}
+	if(p==1){
+		printf("Se ha encontrado el tipo de energia");
+	}
+	else
+	printf("No se ha encontrado\n");
+	
 }
-i++;
-}
-printf("No se ha encontrado este tipo de energÃ­a\n");
-printf("Desea aÃ±adir a la lista anterior\n");
-fclose(pf);
-}
+
 int cerrar(){
 	int p;
 	printf("Desea cerrar sesiÃ³n\n");
@@ -513,3 +514,21 @@ float rango2(int m, tipos *energias)
 
     return rango2;
 }
+
+
+void guardado_de_datos(float datos,  char* archivo){	
+FILE *pf;
+ pf = fopen(archivo, "a");
+  if (pf == NULL)
+  {
+    printf("ERROR AL ABRIR EL FICHERO DE LECTURA");
+  }
+  else
+  {
+   printf("Se ha abierto correctamente\n");
+    fprintf(pf, "%f\n", datos);
+    printf("Se ha guardado");
+    fclose(pf);
+}
+}
+
