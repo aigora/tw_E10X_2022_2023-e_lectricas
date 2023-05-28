@@ -17,8 +17,8 @@ void guardar_datos_generacion_fechas(fecha*f);
 
 //funciones para calculos anual y mensual 
 
-float mediana2(int m,tipos *energias);//funcion para calculo anual y mensual
-float media2(int m,tipos *energias);//funcion calculo anual y mensual
+float mediana2(int m,tipos *energias);
+float media2(int m,tipos *energias);
 float rango2(int m, tipos *energias);
 float moda2(int m, tipos *energias);
 float desviacion_tipica_2(int m, tipos *energias);
