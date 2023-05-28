@@ -383,14 +383,26 @@ void buscar(char cadena[40],tipos *energia) {
 }
 }
 
-int cerrar(){
+int cerrar(int k){
 	int p;
-	printf("Desea cerrar sesiÃ³n\n");
+	if(k==1){
+	printf("Desea cerrar sesion\n");
 	printf("1. Si\n 2. No\n");
 	scanf("%d",&p);
 	if(p==2){
 		system("cls");
 	}
+}
+else if(k==2){
+	printf("Desea seguir haciendo calculos\n");
+	printf("1. No\n 2. Si\n");
+	scanf("%d",&p);
+	if(p==2){
+		system("cls");
+	}
+}
+else
+printf("Error");
 return p;
 }
 float media2(int m,tipos *energias)//funcion para calculo anual y mensual
@@ -525,7 +537,7 @@ float rango2(int m, tipos *energias)
 }
 
 
-void guardado_de_datos(float datos,  char* archivo){	
+void guardado_de_datos(char *tipo_calc,float datos,  char* archivo){	
 FILE *pf;
  pf = fopen(archivo, "a");
   if (pf == NULL)
@@ -535,7 +547,8 @@ FILE *pf;
   else
   {
    printf("Se ha abierto correctamente\n");
-    fprintf(pf, "%f\n", datos);
+
+    fprintf(pf, "%s %f\n",tipo_calc,datos);
     printf("Se ha guardado");
     fclose(pf);
 }

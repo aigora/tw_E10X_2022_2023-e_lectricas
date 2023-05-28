@@ -34,5 +34,5 @@ void imprimir_datos_fichero();
 float desviacion_tipica_2(int m, tipos *energias);
 float varianza2(int m, tipos *energias);
 void buscar(char cadena[40],tipos *energia);
-void guardado_de_datos(float datos,  char* archivo);
-
+void guardado_de_datos(char *tipo_calc,float datos,  char* archivo);
+int cerrar(int k);

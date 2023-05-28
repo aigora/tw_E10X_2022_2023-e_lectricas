@@ -31,6 +31,7 @@ int main()
 	int linea_actual,impresion;
 	char cad[40];
 	int m;
+	char *nombre_calculo;
 	// Reserva de memoria dinamica
 	energias = malloc(sizeof(tipos) * N);
 	fech = malloc(sizeof(fecha) * 24);
@@ -46,47 +47,57 @@ int main()
 			case 1:
 				printf("Seleccione si desea realizar los calculos estadisticos\n1.Globales\n2.De un tipo de energia especifica\n");
 				scanf("%d",&num);
+
 				if(num==1)
 				{
+					do{
 					printf("Seleccione el calculo estadistico a realizar:\n");
 					menu_calculos_estadisticos();
 					scanf("%d",&num_calculos_estadisticos);
+						system("cls");
 					switch(num_calculos_estadisticos){
 					case 1:
 						mediana_global=mediana(energias);
 						printf("La mediana de todos los datos es: %f\n", mediana_global);
-						guardado_de_datos(mediana_global, "guardado_de_calculos_estadisticos_globales.txt");
+						nombre_calculo="mediana_global";
+						guardado_de_datos(nombre_calculo,mediana_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					case 2:
 						media_global=media(energias);
 						printf("La media de todos los datos es: %f\n", media_global);
-						guardado_de_datos(media_global, "guardado_de_calculos_estadisticos_globales.txt");
+						nombre_calculo="media_global";
+						guardado_de_datos(nombre_calculo,media_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;		
 					case 3:
 						varianza_global= varianza(energias);
 						printf("La varianza de todos los datos es : %f\n", varianza_global);
-							guardado_de_datos(varianza_global, "guardado_de_calculos_estadisticos_globales.txt");
+							nombre_calculo="varianza_global";
+							guardado_de_datos(nombre_calculo,varianza_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					case 4:
 						desviacion_tipica_global = desviacion_tipica(energias);
 						printf("La desviacion tipica de todos los datos es: %f\n",desviacion_tipica_global);
-							guardado_de_datos(desviacion_tipica_global, "guardado_de_calculos_estadisticos_globales.txt");
+							nombre_calculo="desviacion_tipica_global";
+							guardado_de_datos(nombre_calculo,desviacion_tipica_global, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					case 5:
 					   moda_glob = moda_global(energias);
 						printf("La moda de todos los datos es :%f\n", moda_glob);
-							guardado_de_datos(moda_glob, "guardado_de_calculos_estadisticos_globales.txt");
+							nombre_calculo="moda_glob";
+							guardado_de_datos(nombre_calculo,moda_glob, "guardado_de_calculos_estadisticos_globales.txt");
 					
 						break;
 					case 6:
 				      	rango_glob = rango_global(energias);
 						printf("EL rango de todos los datos es :%f \n", rango_glob);
-						guardado_de_datos(rango_glob, "guardado_de_calculos_estadisticos_globales.txt");
+						nombre_calculo="rango_glob";
+						guardado_de_datos(nombre_calculo,rango_glob, "guardado_de_calculos_estadisticos_globales.txt");
 						break;
 					default:
 						printf("Error \n");
 					
 				}
+			}while(cerrar(2)!=1);
 			}
 			   else if(num==2)
 			   {
@@ -94,46 +105,56 @@ int main()
 	        	    menu_calculos_estadisticos_energia_especifica();
 	        	    scanf("%d",&calculos_estadisticos_energia_especifica);
 	        	    	system("cls");
+	        	    	do{
+					
 					printf("Seleccione el calculo estadistico a realizar:\n");
 					menu_calculos_estadisticos_mensuales();
 					   scanf("%d",&num_calculos_estadisticos_mensuales);
+
 					   switch(num_calculos_estadisticos_mensuales)
 					   {
 					   	case 1:
 					   		med_tipo_energia=media2(calculos_estadisticos_energia_especifica,energias);//funcion calculo anual y mensual
 					   		 printf("La media es %f\n",med_tipo_energia);
-					   		 	guardado_de_datos(med_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
+					   		 nombre_calculo="media_global";
+					   		 	guardado_de_datos("med_tipo_energia",med_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   		break;
 					   	case 2:
 					   		mediana2_tipo_energia=mediana2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La mediana es %f\n",mediana2_tipo_energia);
-					   		guardado_de_datos(mediana2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
+					   		nombre_calculo="mediana2_tipo_energia";
+					   		guardado_de_datos(nombre_calculo,mediana2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   			break;
 					   	case 3:
 					   		moda2_tipo_energia=moda2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La moda es %f\n",moda2_tipo_energia);
-					   		guardado_de_datos(moda2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
+					   		nombre_calculo="moda2_tipo_energia";
+					   		guardado_de_datos(nombre_calculo,moda2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   				break;
 					   	case 4:
 					   		varianza2_tipo_energia=varianza2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La varianza es %f\n",varianza2_tipo_energia);
-					   		guardado_de_datos(varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales");
+					   		nombre_calculo="varianza2_tipo_energia";
+					   		guardado_de_datos(nombre_calculo,varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales");
 					   		break;
 					   	case 5:
 					        desviacion_tipica_2_tipo_energia=desviacion_tipica_2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("La desviacion tipica es %f\n",desviacion_tipica_2_tipo_energia);
-					   		guardado_de_datos(varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
+					   		nombre_calculo="desviacion_tipica_2_tipo_energia";
+					   		guardado_de_datos(nombre_calculo,varianza2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   		break;
 						case 6:
 							rango2_tipo_energia=rango2(calculos_estadisticos_energia_especifica,energias);
 					   		printf("El rango es %f\n",rango2_tipo_energia);
-					   		guardado_de_datos(rango2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
+					   		nombre_calculo="rango2_tipo_energia";
+					   		guardado_de_datos(nombre_calculo,rango2_tipo_energia, "guardado_de_calculos_estadisticos_mensuales.txt");
 					   	break;
 					   	default:
 					   		printf("Error");
 					   		break;
 					   }
-				    }
+				    }while(cerrar(2)!=1);
+				}
 				else
 				{
 					printf("Error");
@@ -142,7 +163,7 @@ int main()
 				
 			case 2:
 				printf("CARGA DE NUEVOS DATOS\n");
-				printf("Introduzca el nÃºmero de datos que desea agregar: ");
+				printf("Introduzca el numero de datos que desea agregar: ");
                 scanf("%d", &tam);
 
                 // Aumentar el tamaÃ±o del arreglo dinÃ¡mico para contener los nuevos datos
@@ -335,7 +356,7 @@ int main()
 				printf("Error\n");
 				break;
 		}
-	}while(cerrar()!=1);
+	}while(cerrar(1)!=1);
 		printf("Hasta pronto\n");
 	        free(energias);
 	   free(fech);
