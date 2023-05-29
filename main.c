@@ -235,7 +235,7 @@ int main()
 				break;
 			 
 	        case 6:   	
-	        printf("Maximos y minimos");
+	        printf("Maximos y minimos\n");
 	        printf("Seleccione si quiere calcular un maximo o minimo:\n");
 				menu_maximos_y_minimos();
 				scanf("%d",&r);
