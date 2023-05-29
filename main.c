@@ -231,7 +231,7 @@ int main()
 				}
 				else
 				{
-					printf("Error");
+					printf("Error\n");
 				}
 				 
 				break;
@@ -355,7 +355,7 @@ int main()
 							}
 							break;
 					default:
-						printf("Error");
+						printf("Error\n");
 						break;
 
 					
@@ -375,7 +375,7 @@ int main()
 				imprimir_archivo_pantalla("guardado_de_calculos_estadisticos_mensuales.txt");
 					}
 				else
-			printf("Sale al menú principal\n");
+			printf("Saliendo de consulta de datos\n");
 			break;
 		}
 	}while(cerrar(1)!=1);
