@@ -195,7 +195,7 @@ int main()
 				break;
 			case 3:
 				printf("GUARDAR RESULTADOS\n");
-                printf("Si desea guardar resultados pulse 1 sino pulse 2");
+                printf("Si desea guardar resultados pulse 1 sino pulse 2\n");
                 scanf("%d",&guardado);
                 if(guardado==1){
                 	printf("Se ha guardado correctamente\n");
