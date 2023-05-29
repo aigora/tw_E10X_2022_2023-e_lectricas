@@ -221,10 +221,17 @@ int main()
 			     ordenar();
 				scanf("%d",&op);
 				if(op==1){
-			      ordenacion_minimo(p,energias);
+			           ordenacion_maximo(p,energias);
 				}
-			    else
-				  ordenacion_maximo(p,energias);
+			        else if(op==2)
+			       {
+			    	   ordenacion_minimo(p,energias);
+				}
+				else
+				{
+					printf("Error");
+				}
+				 
 				break;
 			 
 	        case 6:   	
