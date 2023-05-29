@@ -189,6 +189,7 @@ int main()
 					}
                 }
                 n = n + tam; // Actualizo el tamanyo total del arreglo.
+		guardar_datos_fichero(tam,energias);
                 printf("Los nuevos datos se han agregado correctamente.\n");
 				break;
 			case 3:
@@ -363,6 +364,18 @@ int main()
 			default:
 				printf("Error\n");
 				break;
+		case 8:
+		  printf("Consulta datos guardados");
+		printf("Desea ver lo que se ha guardado en esta sesion\n");
+		printf("Pulse 1 si quiere ver lo guardado y 2 si no quiere guardar\n");
+			scanf("%d",&guard);
+			if(guard==1){
+				imprimir_archivo_pantalla("guardado_de_calculos_estadisticos_globales.txt");
+				imprimir_archivo_pantalla("guardado_de_calculos_estadisticos_mensuales.txt");
+					}
+				else
+			printf("Sale al menú principal\n");
+			break;
 		}
 	}while(cerrar(1)!=1);
 		printf("Hasta pronto\n");
