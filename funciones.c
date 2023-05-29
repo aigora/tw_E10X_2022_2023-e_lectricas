@@ -392,7 +392,7 @@ int cerrar(int k){
 	}
 }
 else if(k==2){
-	printf("Desea seguir haciendo calculos\n");
+	printf("\nDesea seguir haciendo calculos\n");
 	printf("1. No\n 2. Si\n");
 	scanf("%d",&p);
 	if(p==2){

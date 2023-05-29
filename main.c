@@ -205,7 +205,7 @@ int main()
 					
 					vaciar_archivo("guardado_de_calculos_estadisticos_mensuales.txt");
 					vaciar_archivo("guardado_de_calculos_estadisticos_globales.txt");
-					printf("No se ha guardado");
+					printf("No se ha guardado\n");
 				}
 				break;
 			case 4:
