@@ -377,14 +377,7 @@ void buscar(char cadena[40],tipos *energia) {
 	}
 	else{
 	printf("No se ha encontrado\n");
-	printf("Desea añadirla\n");
-	printf("Si desea añadirla pulse 1 sino 2");
-	scanf("%d",&num);
-	if(num==1){
-		//funcion añadir datos
-	}
-	else
-	printf("No se ha guardado el dato\n");
+	
 }
 }
 
