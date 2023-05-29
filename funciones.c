@@ -580,3 +580,40 @@ void vaciar_archivo(char* archivo){
         fclose(pf);
 }
 }
+void guardar_datos_fichero(int tam,tipos *energia){//permite agregar los elementos añadidos 
+	FILE *pf;
+	int i,j;
+	int n=23;
+ pf = fopen("generacion_por_tecnologias_21_22_puntos_simplificado.csv","a");
+  if (pf == NULL)
+  {
+    printf("ERROR AL ABRIR EL FICHERO DE LECTURA");
+  }
+  else
+  {
+   printf("Se ha abierto correctamente\n");
+ for (i = n; i < n + tam; i++) {//se agrega en la lista a partir de la posicion 24
+	fprintf(pf,"%s",energia[i].tipo_energia);
+	for(j=0;j<24;j++){
+		fprintf(pf,",");
+	fprintf(pf,"%f",energia[i].cant_generada[j]);
+	}
+}
+    printf("Se ha guardado");
+    fclose(pf);
+}
+}
+void imprimir_archivo_pantalla(char* archivo) {//permite imprimir los datos que se han guardado en el fichero
+    FILE* pf = fopen(archivo, "r");
+    char leido,palabra[50];
+    float num;
+    if (pf == NULL) {
+        printf("No se pudo abrir el archivo.\n");
+        return;
+    }
+  while (fscanf(pf, "%s %f", palabra, &num) != EOF) {
+        printf("%s %f\n", palabra, num);
+    }
+   
+    fclose(pf);
+}
