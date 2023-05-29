@@ -19,7 +19,7 @@ void menu_maximos_y_minimos(){
 	printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n 5.Desviacion tipica mensual\n 6. Rango mensual\n Opcion seleccionada:");
 	}
 void ordenar(){
-	printf("1.OrdenaciÃƒÂ³n de mayor a menor\n 2.OrdenaciÃƒÂ³n de menor a mayor\n");
+	printf("1.Ordenacion de mayor a menor\n 2.Ordenacion de menor a mayor\n");
 }
 void menu_calculos_estadisticos_energia_especifica(){
 	printf(" 1-Hidraulica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diÃƒÂ©sel\n 6-Turbina de gas\n 7-Turbina de motor\n");
