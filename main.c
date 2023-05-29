@@ -276,7 +276,7 @@ int main()
 					case 1:
 					printf("Imprimir todos los datos\n");
 						for(m=0;m<24;m++){
-								printf("%d/%d\n\n",energias[1].f[m].month,energias[1].f[m].year);
+								printf("%d/%d\n",energias[1].f[m].month,energias[1].f[m].year);
 				           for(n=0;n<17;n++){
 							
 									printf("%s %f",energias[n].tipo_energia,energias[n].cant_generada[m]);

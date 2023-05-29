@@ -48,7 +48,7 @@ void guardar_datos_generacion_energias(tipos *datos){
   {
   	printf("Se ha abierto correctamente\n");
 int linea_actual = 0;
-    fseek(pf, 390, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
+    fseek(pf, 393, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
  pos = ftell(pf);
    // printf("La posicion actual del puntero es %ld bytes.\n", pos);
 while ( linea_actual <= 23) {
@@ -88,7 +88,7 @@ void guardar_datos_generacion_fechas(fecha *f){
   else
   {
       printf("Se ha abierto correctamente\n");
-             fseek(pf,216, SEEK_SET);
+             fseek(pf,220, SEEK_SET);
              pos=tell(pf);
                 // printf("La posicion actual del puntero es %ld bytes.\n", pos);
                 for(i=0;i<24;i++){

@@ -1,2 +1,4 @@
 mediana2_tipo_energia 272.386047
 mediana2_tipo_energia 272.386047
+med_tipo_energia 45.043854
+moda2_tipo_energia 28.000000
