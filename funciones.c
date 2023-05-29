@@ -10,7 +10,7 @@ void menu(){
 }
 
 void menu_calculos_estadisticos() {
-	printf("1 - Mediana global\n2 - Media global\n 3-Varianza global\n 4-Desviacion tipica global\n 5-Moda global \n 6-Rango global\nOpcion seleccionada: ");
+	printf(" 1-Mediana global\n 2-Media global\n 3-Varianza global\n 4-Desviacion tipica global\n 5-Moda global \n 6-Rango global\nOpcion seleccionada: ");
 }
 void menu_maximos_y_minimos(){
 	printf(" 1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
@@ -19,7 +19,7 @@ void menu_maximos_y_minimos(){
 	printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n 5.Desviacion tipica mensual\n 6.Rango mensual\n Opcion seleccionada:");
 	}
 void ordenar(){
-	printf("1.Ordenacion de mayor a menor\n 2.Ordenacion de menor a mayor\n");
+	printf(" 1.Ordenacion de mayor a menor\n 2.Ordenacion de menor a mayor\n");
 }
 void menu_calculos_estadisticos_energia_especifica(){
 	printf(" 1-Hidraulica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diesel\n 6-Turbina de gas\n 7-Turbina de motor\n");
@@ -42,7 +42,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 
   if (pf == NULL)
   {
-    printf("Error al abrir el fichero de lectura");
+    printf("Error al abrir el fichero de lectura\n");
   }
   else
   {
@@ -385,7 +385,7 @@ int cerrar(int k){
 	int p;
 	if(k==1){
 	printf("Desea cerrar sesion\n");
-	printf("1. Si\n 2. No\n");
+	printf(" 1. Si\n 2. No\n");
 	scanf("%d",&p);
 	if(p==2){
 		system("cls");
