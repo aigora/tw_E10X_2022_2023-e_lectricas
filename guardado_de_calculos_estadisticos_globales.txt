@@ -1,2 +1,4 @@
 media_global 54.408276
 desviacion_tipica_global 0.000000
+desviacion_tipica_global 0.000000
+media_global 54.408276

@@ -50,7 +50,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 int linea_actual = 0;
     fseek(pf, 390, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
  pos = ftell(pf);
-    printf("La posicion actual del puntero es %ld bytes.\n", pos);
+   // printf("La posicion actual del puntero es %ld bytes.\n", pos);
 while ( linea_actual <= 23) {
 	fscanf(pf,"%[^,],%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n",
         datos[linea_actual].tipo_energia, &datos[linea_actual].cant_generada[0],
@@ -90,7 +90,7 @@ void guardar_datos_generacion_fechas(fecha *f){
       printf("Se ha abierto correctamente\n");
              fseek(pf,216, SEEK_SET);
              pos=tell(pf);
-                 printf("La posicion actual del puntero es %ld bytes.\n", pos);
+                // printf("La posicion actual del puntero es %ld bytes.\n", pos);
                 for(i=0;i<24;i++){
                     fscanf(pf,"%d-%d",&f[i].month,&f[i].year);
                     fscanf(pf,"%c",&lectura);
