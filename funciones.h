@@ -10,6 +10,7 @@ typedef struct {
 } tipos;
 void menu();
 void menu_calculos_estadisticos();
+void menu_tipo_energia_ordenacion_valores();
 void guardar_datos_generacion_energias(tipos*datos);
 void guardar_datos_generacion_fechas(fecha*f);
 
