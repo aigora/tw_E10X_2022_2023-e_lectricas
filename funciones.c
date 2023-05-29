@@ -22,9 +22,14 @@ void ordenar(){
 	printf("1.Ordenacion de mayor a menor\n 2.Ordenacion de menor a mayor\n");
 }
 void menu_calculos_estadisticos_energia_especifica(){
-	printf(" 1-Hidraulica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diÃƒÂ©sel\n 6-Turbina de gas\n 7-Turbina de motor\n");
+	printf(" 1-Hidraulica\n 2-Turbinacion bombeo \n 3-Nuclear\n 4-Carbon\n 5-Motores diesel\n 6-Turbina de gas\n 7-Turbina de motor\n");
 	printf(" 8-Ciclo combinado \n 9-Hidroeolica\n 10-Eolica\n 11-Solar fotovoltaica\n 12-Solar termica\n 13-Otros renovables\n 14-Congeneracion\n");
 	printf(" 15-Residuos no renovables \n 16-Residuos renovables\n 17-Generacion total\n ");
+}
+void menu_tipo_energia_ordenacion_valores(){
+	printf(" 0-Hidraulica\n 1-Turbinacion bombeo \n 2-Nuclear\n 3-Carbon\n 4-Motores diesel\n 5-Turbina de gas\n 6-Turbina de motor\n");
+	printf(" 7-Ciclo combinado \n 8-Hidroeolica\n 9-Eolica\n 10-Solar fotovoltaica\n 11-Solar termica\n 12-Otros renovables\n 13-Congeneracion\n");
+	printf(" 14-Residuos no renovables \n 15-Residuos renovables\n 16-Generacion total\n ");
 }
 void imprimir_datos_fichero(){
 	printf("1.Imprimir todos los datos ordenados en meses\n 2.Imprimir los datos de un mes\n 3. Imprimir los datos de una energia\n");
