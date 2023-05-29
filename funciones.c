@@ -6,17 +6,17 @@
 #include <math.h>
 #include <stdlib.h>
 void menu(){
-		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Imprimir valores\n 8.Consulta datos guardados");
+		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Imprimir valores\n8.Consulta datos guardados\n");
 }
 
 void menu_calculos_estadisticos() {
 	printf("1 - Mediana global\n2 - Media global\n 3-Varianza global\n 4-Desviacion tipica global\n 5-Moda global \n 6-Rango global\nOpcion seleccionada: ");
 }
 void menu_maximos_y_minimos(){
-	printf("1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
+	printf(" 1.Maximo mensual\n 2.Minimo mensual\n 3.Maximo en un intervalo\n 4.Minimo en un intervalo\n");
 }
 	void menu_calculos_estadisticos_mensuales(){
-	printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n 5.Desviacion tipica mensual\n 6. Rango mensual\n Opcion seleccionada:");
+	printf(" 1.Media mensual\n 2.Mediana mensual\n 3.Moda mensual\n 4.Varianza mensual\n 5.Desviacion tipica mensual\n 6.Rango mensual\n Opcion seleccionada:");
 	}
 void ordenar(){
 	printf("1.Ordenacion de mayor a menor\n 2.Ordenacion de menor a mayor\n");
@@ -32,7 +32,7 @@ void menu_tipo_energia_ordenacion_valores(){
 	printf(" 14-Residuos no renovables \n 15-Residuos renovables\n 16-Generacion total\n ");
 }
 void imprimir_datos_fichero(){
-	printf("1.Imprimir todos los datos ordenados en meses\n 2.Imprimir los datos de un mes\n 3. Imprimir los datos de una energia\n");
+	printf("1.Imprimir todos los datos ordenados en meses\n 2.Imprimir los datos de un mes\n 3.Imprimir los datos de una energia\n");
 }
 void guardar_datos_generacion_energias(tipos *datos){
 	 FILE *pf;
