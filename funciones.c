@@ -6,7 +6,7 @@
 #include <math.h>
 #include <stdlib.h>
 void menu(){
-		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Imprimir valores\n");
+		printf("1.Calculos Estadisticos\n2.Carga de nuevos datos\n3.Guardar resultados\n4.Busquedas\n5.Ordenacion de valores\n6.Maximos y minimos\n7.Imprimir valores\n 8.Consulta datos guardados");
 }
 
 void menu_calculos_estadisticos() {
