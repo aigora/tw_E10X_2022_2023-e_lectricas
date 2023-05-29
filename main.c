@@ -21,6 +21,7 @@ int main()
 	int nLineas=0,pos;
 	int numero;
 	int mes;
+	int guard;
 	int num_calculos_estadisticos,num_calculos_estadisticos_mensuales;
 	float med_tipo_energia;
 	float mediana2_tipo_energia;
