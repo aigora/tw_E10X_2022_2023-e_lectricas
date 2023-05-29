@@ -48,7 +48,7 @@ void ordenacion_minimo(int filas,tipos *energias);
 void guardar_datos_generacion_energias(tipos* energias);
 void imprimir_datos_fichero();
 
-void buscar(char cadena[40],tipos *energia);
+void buscar(char cadena[60],tipos *energia);
 void guardado_de_datos(char *tipo_calc,float datos,  char* archivo);
 int cerrar(int k);
 void vaciar_archivo(char* archivo);//se vacia el fichero al abrirlo en modo escritura y no realizar ninguna operación

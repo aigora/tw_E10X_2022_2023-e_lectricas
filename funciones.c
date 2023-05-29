@@ -46,7 +46,7 @@ void guardar_datos_generacion_energias(tipos *datos){
   }
   else
   {
-  	printf("Se ha abierto correctamente\n");
+  //	printf("Se ha abierto correctamente\n");
 int linea_actual = 0;
     fseek(pf, 393, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
  pos = ftell(pf);
@@ -87,7 +87,7 @@ void guardar_datos_generacion_fechas(fecha *f){
   }
   else
   {
-      printf("Se ha abierto correctamente\n");
+     // printf("Se ha abierto correctamente\n");
              fseek(pf,220, SEEK_SET);
              pos=tell(pf);
                 // printf("La posicion actual del puntero es %ld bytes.\n", pos);
@@ -205,10 +205,10 @@ float varianza(tipos *energias)
 float desviacion_tipica(tipos *energias)
 {
 	
-	float varianza;
-	varianza = varianza;
+	float varianzas;
+	varianzas = varianza(energias);
 	float desviacion_tipica;
-	desviacion_tipica = sqrt(varianza);//opereacion correspondiente al calculo de la desviacion tipica
+	desviacion_tipica = sqrt(varianzas);//opereacion correspondiente al calculo de la desviacion tipica
 	
 	
 	return desviacion_tipica;
@@ -363,7 +363,7 @@ void ordenacion_maximo(int filas,tipos *energias){
 }
 
 
-void buscar(char cadena[40],tipos *energia) {
+void buscar(char cadena[60],tipos *energia) {
 	int j;
 	int p=0;
 	int num=0;
@@ -486,7 +486,7 @@ float moda2(int m, tipos *energias)//funcion para calculo anual y mensual
 	
 void guardar_fecha_tipos(fecha *fech,tipos *energias){
 	int m,n;
-	  	for(m=0;m<18;m++){
+	  	for(m=0;m<17;m++){
   		  	for(n=0;n<24;n++){
   		energias[m].f[n].month=fech[n].month;
   			energias[m].f[n].year=fech[n].year;
