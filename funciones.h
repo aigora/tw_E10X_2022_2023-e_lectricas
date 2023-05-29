@@ -52,3 +52,5 @@ void buscar(char cadena[40],tipos *energia);
 void guardado_de_datos(char *tipo_calc,float datos,  char* archivo);
 int cerrar(int k);
 void vaciar_archivo(char* archivo);//se vacia el fichero al abrirlo en modo escritura y no realizar ninguna operación
+void guardar_datos_fichero(int tam,tipos *energia);//guardar datos en el fichero de generacon de energias que se ha agregado por el usuario
+void imprimir_archivo_pantalla(char* archivo);//me imprime los datos almacenados en lso ficheros a la hroa de realizar los calculos
