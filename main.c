@@ -216,6 +216,7 @@ int main()
 				printf("ORDENACION DE VALORES\n");
 				// Inicializacion de la variable maximo con el primer valor de 'cant_generada'
 				printf("Introduzca el tipo de energia del cual quiere ver el maximo\n");
+				menu_tipo_energia_ordenacion_valores();
 				scanf("%d",&p);
 			     ordenar();
 				scanf("%d",&op);
