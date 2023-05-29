@@ -45,7 +45,7 @@ void guardar_datos_generacion_energias(tipos *datos){
 int linea_actual = 0;
     fseek(pf, 390, SEEK_SET);//situarnos en el fichero para que comience a leer y almacenar
  pos = ftell(pf);
-    printf("La posiciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n actual del puntero es %ld bytes.\n", pos);
+    printf("La posicion actual del puntero es %ld bytes.\n", pos);
 while ( linea_actual <= 23) {
 	fscanf(pf,"%[^,],%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n",
         datos[linea_actual].tipo_energia, &datos[linea_actual].cant_generada[0],
